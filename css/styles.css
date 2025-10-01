@@ -64,6 +64,12 @@ body {
     height: 70px;
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .nav-logo span {
     font-size: 1.5rem;
     font-weight: bold;
@@ -245,6 +251,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1;
+    position: relative;
 }
 
 .profile-img {
@@ -254,6 +261,7 @@ body {
     object-fit: cover;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     border: 5px solid white;
+    animation: float 6s ease-in-out infinite;
 }
 
 /* About Section */

@@ -14,29 +14,21 @@
 4. Sigue las instrucciones para conectar tu cuenta
 5. **Anota tu SERVICE_ID** (ejemplo: `service_xyz123`)
 
-### 3. Crear template de email
+### 3. Crear template de email personalizado
+
 1. Ve a **Email Templates**
 2. Haz clic en **Create New Template**
-3. Usa este template:
+3. **IMPORTANTE**: Copia TODO el contenido del archivo `emailjs-template.html` que está en tu carpeta del portfolio
+4. Pégalo en el campo HTML del template en EmailJS
+5. En el **Subject** pon: `Nuevo mensaje desde tu portfolio - {{from_name}}`
+6. **Anota tu TEMPLATE_ID** (ejemplo: `template_abc456`)
 
-```
-Asunto: Nuevo mensaje desde tu portfolio
-
-Hola Luca,
-
-Has recibido un nuevo mensaje desde tu portfolio:
-
-Nombre: {{from_name}}
-Email: {{from_email}}
-
-Mensaje:
-{{message}}
-
----
-Enviado desde tu portfolio web
-```
-
-4. **Anota tu TEMPLATE_ID** (ejemplo: `template_abc456`)
+**📁 El archivo `emailjs-template.html` contiene tu template personalizado completo con:**
+- ⭐ Tu logo estrella
+- 🎨 Colores de tu marca (violeta/negro)
+- 📱 Diseño responsive
+- 🔗 Enlaces a tus redes sociales
+- ✨ Formato profesional
 
 ### 4. Obtener tu User ID
 1. Ve a **Account** → **General**
@@ -67,25 +59,53 @@ emailjs.sendForm('service_xyz123', 'template_abc456', form)
 
 ## 🎯 Configuración recomendada
 
-### Template HTML para EmailJS:
+### Template HTML personalizado para Luca:
+
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Nuevo mensaje - Portfolio</title>
-</head>
-<body>
-    <h2>Nuevo mensaje desde tu portfolio</h2>
-    <p><strong>Nombre:</strong> {{from_name}}</p>
-    <p><strong>Email:</strong> {{from_email}}</p>
-    <p><strong>Mensaje:</strong></p>
-    <div style="background: #f5f5f5; padding: 15px; border-left: 4px solid #8b5cf6;">
-        {{message}}
+<div style="font-family: system-ui, sans-serif, Arial; font-size: 12px; max-width: 600px; margin: 0 auto; background: #f8fafc; padding: 20px; border-radius: 10px;">
+  <div style="text-align: center; margin-bottom: 20px;">
+    <div style="font-size: 32px; margin-bottom: 10px;">⭐</div>
+    <h2 style="color: #8b5cf6; margin: 0; font-size: 20px;">Nuevo mensaje desde el portfolio</h2>
+    <p style="color: #64748b; margin: 5px 0;">Luca Alejandro Fisogni - Desarrollador Full Stack</p>
+  </div>
+  
+  <div style="background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <div style="margin-bottom: 20px; padding: 15px 0; border-bottom: 1px dashed #e2e8f0;">
+      <table role="presentation" style="width: 100%;">
+        <tr>
+          <td style="vertical-align: top; width: 50px;">
+            <div style="
+              padding: 10px;
+              background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+              border-radius: 50%;
+              font-size: 20px;
+              text-align: center;
+              color: white;
+            ">
+              👤
+            </div>
+          </td>
+          <td style="vertical-align: top; padding-left: 15px;">
+            <div style="color: #1a1a1a; font-size: 18px; font-weight: bold; margin-bottom: 5px;">
+              {{from_name}}
+            </div>
+            <div style="color: #64748b; font-size: 14px; margin-bottom: 15px;">
+              📧 {{from_email}}
+            </div>
+            <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+              <p style="font-size: 16px; line-height: 1.6; margin: 0; color: #1a1a1a;">{{message}}</p>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
-    <hr>
-    <p><small>Enviado desde lucafisogni.portfolio</small></p>
-</body>
-</html>
+    
+    <div style="text-align: center; padding: 15px 0; color: #64748b; font-size: 12px;">
+      <p style="margin: 0;">⭐ Enviado desde lucafisogni.dev ⭐</p>
+      <p style="margin: 5px 0 0 0;">Desarrollador Full Stack • Backend Specialist</p>
+    </div>
+  </div>
+</div>
 ```
 
 ## 🔧 Resolución de problemas

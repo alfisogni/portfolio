@@ -241,7 +241,7 @@ function initContactForm() {
             submitBtn.disabled = true;
             
             // Enviar email con EmailJS
-            emailjs.sendForm('TU_SERVICE_ID', 'TU_TEMPLATE_ID', form)
+            emailjs.sendForm('service_gtw6y7f', 'TU_TEMPLATE_ID', form)
                 .then(function(response) {
                     console.log('Email enviado exitosamente:', response);
                     submitBtn.textContent = '¡Mensaje Enviado!';

@@ -210,7 +210,7 @@ function initParallaxEffect() {
 // Formulario de contacto con EmailJS
 function initContactForm() {
     // Inicializar EmailJS (necesitarás reemplazar con tu USER_ID)
-    emailjs.init("TU_USER_ID_AQUI"); // Reemplazar después del registro
+    emailjs.init("3lB_RrpJl0jbKDyd4"); // Public Key de EmailJS configurada
     
     const form = document.querySelector('#contact-form');
     
@@ -241,7 +241,7 @@ function initContactForm() {
             submitBtn.disabled = true;
             
             // Enviar email con EmailJS
-            emailjs.sendForm('service_gtw6y7f', 'TU_TEMPLATE_ID', form)
+            emailjs.sendForm('service_gtw6y7f', 'template_yxby3fo', form)
                 .then(function(response) {
                     console.log('Email enviado exitosamente:', response);
                     submitBtn.textContent = '¡Mensaje Enviado!';

@@ -14,6 +14,8 @@ body {
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 30%, #2d1b69 60%, #1a1a1a 100%);
+    background-attachment: fixed;
 }
 
 .container {
@@ -123,7 +125,6 @@ body {
     display: flex;
     align-items: center;
     padding: 100px 20px 50px;
-    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d1b69 100%);
     position: relative;
     overflow: hidden;
 }
@@ -201,15 +202,16 @@ body {
 }
 
 .btn-secondary {
-    background: transparent;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
     color: var(--white);
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--accent-color);
 }
 
 .btn-secondary:hover {
-    background: var(--primary-color);
+    background: var(--accent-color);
     color: white;
     transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
 }
 
 .btn-download {
@@ -257,14 +259,13 @@ body {
 /* About Section */
 .about {
     padding: 100px 0;
-    background: white;
 }
 
 .about h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--dark-color);
+    color: var(--white);
 }
 
 .about-content {
@@ -276,14 +277,14 @@ body {
 
 .about-text p {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: #cbd5e1;
     margin-bottom: 2rem;
     line-height: 1.8;
 }
 
 .skills h3 {
     margin-bottom: 1rem;
-    color: var(--dark-color);
+    color: var(--white);
 }
 
 .skills-grid {
@@ -310,7 +311,8 @@ body {
 .stat {
     text-align: center;
     padding: 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.2);
     border-radius: 15px;
 }
 
@@ -321,14 +323,13 @@ body {
 }
 
 .stat p {
-    color: var(--text-light);
+    color: #94a3b8;
     font-weight: 500;
 }
 
 /* Projects Section - Cards Animadas */
 .projects {
     padding: 100px 0;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d1b69 50%, #0f0f0f 100%);
 }
 
 .projects h2 {
@@ -464,14 +465,13 @@ body {
 /* Contact Section */
 .contact {
     padding: 100px 0;
-    background: white;
 }
 
 .contact h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--dark-color);
+    color: var(--white);
 }
 
 .contact-content {
@@ -492,13 +492,15 @@ body {
     align-items: center;
     gap: 20px;
     padding: 25px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.2);
     border-radius: 15px;
     transition: transform 0.3s ease;
 }
 
 .contact-item:hover {
     transform: translateX(10px);
+    border-color: rgba(139, 92, 246, 0.4);
 }
 
 .contact-item i {
@@ -514,12 +516,12 @@ body {
 }
 
 .contact-item h3 {
-    color: var(--dark-color);
+    color: var(--white);
     margin-bottom: 0.3rem;
 }
 
 .contact-item p {
-    color: var(--text-light);
+    color: #94a3b8;
 }
 
 .contact-form {
@@ -532,18 +534,24 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 15px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid rgba(139, 92, 246, 0.3);
     border-radius: 10px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
-    background: #f8f9fa;
+    background: rgba(26, 26, 26, 0.8);
+    color: var(--white);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    background: white;
+    background: rgba(26, 26, 26, 0.95);
 }
 
 /* Footer */

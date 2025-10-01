@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
@@ -403,7 +403,8 @@ body {
 
 .project-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 25px 50px rgba(139, 92, 246, 0.3);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d1b69 30%, #8b5cf6 60%, #a855f7 100%);
 }
 
 .card-image {
@@ -429,7 +430,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(168, 85, 247, 0.95));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -794,4 +795,50 @@ html {
 
 .card-image img.loaded {
     opacity: 1;
+}
+
+/* ========== CONFIGURACIÓN DE FUENTES ========== */
+
+/* Montserrat desde Google Fonts ya está cargado en el HTML */
+
+/* Aplicar fuente a elementos principales */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.nav-logo span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+/* Clases utilitarias para fuentes */
+.montserrat-light {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.montserrat-regular {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.montserrat-medium {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.montserrat-semibold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.montserrat-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.montserrat-extrabold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
 }

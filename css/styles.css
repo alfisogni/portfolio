@@ -327,6 +327,35 @@ body {
     font-weight: 500;
 }
 
+/* Creative Link Styles */
+.creative-link {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.bandlab-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.bandlab-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+}
+
+.bandlab-link i {
+    font-size: 1.1rem;
+}
+
 /* Projects Section - Cards Animadas */
 .projects {
     padding: 100px 0;
@@ -588,6 +617,15 @@ body {
 
 .social-links a:hover {
     transform: translateY(-3px);
+}
+
+/* BandLab icon specific styling */
+.bandlab-icon {
+    background: linear-gradient(135deg, #ff6b35, #f7931e) !important;
+}
+
+.bandlab-icon:hover {
+    background: linear-gradient(135deg, #e55a2b, #e8891a) !important;
 }
 
 /* Responsive Design */

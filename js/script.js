@@ -207,32 +207,70 @@ function initParallaxEffect() {
     });
 }
 
-// Formulario de contacto
+// Formulario de contacto con EmailJS
 function initContactForm() {
-    const form = document.querySelector('.contact-form');
+    // Inicializar EmailJS (necesitarás reemplazar con tu USER_ID)
+    emailjs.init("TU_USER_ID_AQUI"); // Reemplazar después del registro
+    
+    const form = document.querySelector('#contact-form');
     
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simulación de envío
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             
+            // Validar formulario antes de enviar
+            const inputs = form.querySelectorAll('input, textarea');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                if (!validateField(input)) {
+                    isValid = false;
+                }
+            });
+            
+            if (!isValid) {
+                showMessage('Por favor, completa todos los campos correctamente.', 'error');
+                return;
+            }
+            
+            // Mostrar estado de envío
             submitBtn.textContent = 'Enviando...';
             submitBtn.disabled = true;
             
-            setTimeout(() => {
-                submitBtn.textContent = '¡Mensaje Enviado!';
-                submitBtn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
-                
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = '';
-                    form.reset();
-                }, 2000);
-            }, 1500);
+            // Enviar email con EmailJS
+            emailjs.sendForm('TU_SERVICE_ID', 'TU_TEMPLATE_ID', form)
+                .then(function(response) {
+                    console.log('Email enviado exitosamente:', response);
+                    submitBtn.textContent = '¡Mensaje Enviado!';
+                    submitBtn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+                    showMessage('¡Mensaje enviado exitosamente! Te contactaré pronto.', 'success');
+                    
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.background = '';
+                        form.reset();
+                        // Limpiar clases de validación
+                        inputs.forEach(input => {
+                            input.classList.remove('success', 'error');
+                        });
+                    }, 3000);
+                })
+                .catch(function(error) {
+                    console.error('Error al enviar email:', error);
+                    submitBtn.textContent = 'Error al enviar';
+                    submitBtn.style.background = 'linear-gradient(135deg, #e74c3c, #c0392b)';
+                    showMessage('Hubo un error al enviar el mensaje. Inténtalo de nuevo.', 'error');
+                    
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.background = '';
+                    }, 3000);
+                });
         });
 
         // Validación en tiempo real
@@ -273,6 +311,46 @@ function validateField(field) {
     
     field.classList.add('success');
     return true;
+}
+
+// Mostrar mensajes de notificación
+function showMessage(message, type) {
+    // Crear elemento de notificación
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    
+    // Agregar estilos
+    Object.assign(notification.style, {
+        position: 'fixed',
+        top: '20px',
+        right: '20px',
+        padding: '15px 20px',
+        borderRadius: '8px',
+        color: 'white',
+        fontWeight: '500',
+        zIndex: '10000',
+        transform: 'translateX(400px)',
+        transition: 'transform 0.3s ease',
+        backgroundColor: type === 'success' ? '#27ae60' : '#e74c3c'
+    });
+    
+    document.body.appendChild(notification);
+    
+    // Animar entrada
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Remover después de 4 segundos
+    setTimeout(() => {
+        notification.style.transform = 'translateX(400px)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 4000);
 }
 
 // Lazy loading para imágenes

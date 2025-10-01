@@ -175,7 +175,8 @@ body {
 
 .hero-buttons {
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .btn-primary, .btn-secondary {
@@ -209,6 +210,31 @@ body {
     background: var(--primary-color);
     color: white;
     transform: translateY(-2px);
+}
+
+.btn-download {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    color: var(--white);
+    border: 2px solid var(--accent-color);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-download:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
+}
+
+.btn-download i {
+    font-size: 0.9rem;
 }
 
 .hero-image {

@@ -468,6 +468,15 @@ body {
     transform: scale(1.1);
 }
 
+/* Disabled action button */
+.action-btn.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+    border-color: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.08);
+}
+
 .card-content {
     padding: 25px;
 }

@@ -136,14 +136,7 @@ body {
 }
 
 .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(120,119,198,0.3)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="10" cy="10" r="10" fill="url(%23a)"/></svg>') repeat;
-    opacity: 0.1;
+    display: none;
 }
 
 .hero-content {
@@ -255,8 +248,8 @@ body {
 }
 
 .profile-img {
-    width: 350px;
-    height: 350px;
+    width: 360px;
+    height: 360px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -697,8 +690,8 @@ body {
     }
     
     .profile-img {
-        width: 250px;
-        height: 250px;
+        width: 260px;
+        height: 260px;
         margin-top: 2rem;
     }
     

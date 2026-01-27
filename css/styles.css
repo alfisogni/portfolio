@@ -244,7 +244,7 @@ body {
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: right;
     z-index: 1;
     position: relative;
     padding-right: 180px;

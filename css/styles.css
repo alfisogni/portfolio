@@ -133,7 +133,7 @@ body {
     align-items: center;
     padding: 100px 20px 50px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     gap: 80px;
 }
 

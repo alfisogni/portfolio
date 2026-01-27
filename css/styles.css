@@ -248,11 +248,11 @@ body {
 }
 
 .profile-img {
-    width: 360px;
-    height: 360px;
+    width: 520px;
+    height: 520px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
     border: none;
     background: transparent;
     animation: float 6s ease-in-out infinite;
@@ -690,8 +690,8 @@ body {
     }
     
     .profile-img {
-        width: 260px;
-        height: 260px;
+        width: 420px;
+        height: 420px;
         margin-top: 2rem;
     }
     

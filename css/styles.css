@@ -1,3 +1,4 @@
+
 /* Reset y fuentes */
 * {
     margin: 0;
@@ -242,10 +243,11 @@ body {
 .hero-image {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     z-index: 1;
     position: relative;
+    padding-right: 80px;
 }
 
 .profile-img {
@@ -680,6 +682,10 @@ body {
         text-align: center;
         padding: 120px 20px 50px;
         gap: 30px;
+    }
+    .hero-image {
+        justify-content: center;
+        padding-right: 0;
     }
     
     .hero-content h1 {

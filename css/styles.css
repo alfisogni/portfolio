@@ -133,6 +133,7 @@ body {
     padding: 100px 20px 50px;
     position: relative;
     overflow: hidden;
+    gap: 80px;
 }
 
 .hero::before {
@@ -678,6 +679,7 @@ body {
         flex-direction: column;
         text-align: center;
         padding: 120px 20px 50px;
+        gap: 30px;
     }
     
     .hero-content h1 {

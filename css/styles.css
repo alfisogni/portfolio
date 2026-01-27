@@ -255,8 +255,8 @@ body {
 }
 
 .profile-img {
-    width: 300px;
-    height: 300px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: none;
@@ -697,8 +697,8 @@ body {
     }
     
     .profile-img {
-        width: 220px;
-        height: 220px;
+        width: 150px;
+        height: 150px;
         margin-top: 2rem;
     }
     

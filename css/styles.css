@@ -260,8 +260,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border: none;
-    background: transparent;
+    border: 5px solid white;
     animation: float 6s ease-in-out infinite;
 }
 

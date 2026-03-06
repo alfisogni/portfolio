@@ -420,10 +420,16 @@ body {
 .card-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    display: block;
+    object-fit: cover;
     object-position: center;
     background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(109, 40, 217, 0.05));
     transition: transform 0.6s ease;
+}
+
+/* Ajuste específico: reducir un poco la altura de la card "mystic" para que no destaque tanto */
+.project-card.mystic .card-image {
+    height: 200px;
 }
 
 .project-card:hover .card-image img {
@@ -811,21 +817,6 @@ html {
 
 .card-image img.loaded {
     opacity: 1;
-}
-
-/* Mystic specific: larger banner-style image */
-.project-card.mystic .card-image {
-    height: 350px; /* larger to accommodate banner */
-}
-.project-card.mystic .card-image img {
-    object-fit: cover; /* fill the banner area nicely */
-    object-position: center;
-}
-
-@media (max-width: 768px) {
-    .project-card.mystic .card-image {
-        height: 220px; /* mobile-friendly */
-    }
 }
 
 /* ========== CONFIGURACIÓN DE FUENTES ========== */

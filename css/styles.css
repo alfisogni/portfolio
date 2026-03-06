@@ -427,10 +427,7 @@ body {
     transition: transform 0.6s ease;
 }
 
-/* Ajuste específico: reducir un poco la altura de la card "mystic" para que no destaque tanto */
-.project-card.mystic .card-image {
-    height: 200px;
-}
+/* (Se eliminó la regla específica para `mystic` — ahora usa la misma altura que las demás cards) */
 
 .project-card:hover .card-image img {
     transform: scale(1.1);

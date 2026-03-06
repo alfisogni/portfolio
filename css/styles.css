@@ -258,7 +258,9 @@ body {
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(109, 40, 217, 0.1));
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     border: 5px solid white;
     animation: float 6s ease-in-out infinite;

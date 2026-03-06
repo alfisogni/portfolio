@@ -813,6 +813,21 @@ html {
     opacity: 1;
 }
 
+/* Mystic specific: larger banner-style image */
+.project-card.mystic .card-image {
+    height: 360px; /* larger to accommodate banner */
+}
+.project-card.mystic .card-image img {
+    object-fit: cover; /* fill the banner area nicely */
+    object-position: center;
+}
+
+@media (max-width: 768px) {
+    .project-card.mystic .card-image {
+        height: 220px; /* mobile-friendly */
+    }
+}
+
 /* ========== CONFIGURACIÓN DE FUENTES ========== */
 
 /* Montserrat desde Google Fonts ya está cargado en el HTML */

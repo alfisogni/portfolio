@@ -261,7 +261,6 @@ body {
     border-radius: 50%;
     object-fit: cover;
     object-position: center top;
-    padding: 15px;
     background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(109, 40, 217, 0.15));
     box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3), 0 0 0 10px rgba(255, 255, 255, 0.1);
     border: 6px solid white;
@@ -708,7 +707,6 @@ body {
         width: 280px;
         height: 280px;
         margin-top: 2rem;
-        padding: 10px;
     }
     
     .about-content {

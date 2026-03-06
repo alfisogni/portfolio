@@ -252,17 +252,19 @@ body {
     align-items: center;
     z-index: 1;
     position: relative;
+    padding: 20px;
 }
 
 .profile-img {
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
-    object-fit: contain;
-    object-position: center;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(109, 40, 217, 0.1));
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border: 5px solid white;
+    object-fit: cover;
+    object-position: center top;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(109, 40, 217, 0.15));
+    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3), 0 0 0 10px rgba(255, 255, 255, 0.1);
+    border: 6px solid white;
     animation: float 6s ease-in-out infinite;
 }
 
@@ -698,9 +700,10 @@ body {
     }
     
     .profile-img {
-        width: 250px;
-        height: 250px;
+        width: 280px;
+        height: 280px;
         margin-top: 2rem;
+        padding: 10px;
     }
     
     .about-content {

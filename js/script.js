@@ -388,9 +388,6 @@ function addProject(projectData) {
                     <a href="${projectData.demoUrl}" class="action-btn" title="Ver Demo">
                         <i class="fas fa-external-link-alt"></i>
                     </a>
-                    <a href="${projectData.codeUrl}" class="action-btn" title="Ver Código">
-                        <i class="fab fa-github"></i>
-                    </a>
                 </div>
             </div>
         </div>

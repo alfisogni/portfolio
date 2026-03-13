@@ -157,7 +157,7 @@ function initProjectCards() {
 
 // Animación de typing para el hero
 function initTypingAnimation() {
-    const roles = ['Desarrollador Full Stack', 'Diseñador Web', 'Desarrollador Frontend', 'Desarrollador Backend'];
+    const roles = ['Diseñador Web', 'Desarrollador Fullstack', 'Diseñador UX/UI'];
     const roleElement = document.querySelector('.hero-content h2');
     
     if (roleElement) {

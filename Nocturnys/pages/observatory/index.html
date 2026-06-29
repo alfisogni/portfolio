@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nocturnys</title>
+</head>
+<body>
+  <main data-nocturnys-space>
+    <p>Stage <span data-nocturnys-stage></span></p>
+    <h1 data-nocturnys-title></h1>
+    <p data-nocturnys-represents></p>
+    <p>Emotion: <span data-nocturnys-emotion></span></p>
+    <p>Question: <span data-nocturnys-question></span></p>
+  </main>
+
+  <nav data-nocturnys-nav aria-label="Spatial navigation"></nav>
+  <p data-nocturnys-continue></p>
+
+  <aside>
+    <h2>Journey</h2>
+    <div data-nocturnys-journey></div>
+  </aside>
+
+  <script type="module">
+    import { initSpacePage } from '../../src/app.js';
+    initSpacePage('observatory');
+  </script>
+</body>
+</html>

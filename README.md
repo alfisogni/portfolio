@@ -1,197 +1,80 @@
-# 🚀 Portfolio Personal
+# Portfolio — Luca Alejandro Fisogni
 
-Un portfolio moderno y completamente personalizable con animaciones impresionantes y diseño responsive.
+Portfolio personal de **Luca Alejandro Fisogni**, desarrollador web enfocado en frontend y diseño de interfaces. Presenta mi perfil profesional, proyectos destacados y un formulario de contacto funcional.
 
-## ✨ Características
+**Sitio en vivo:** [luca-alejandro-fisogni-portfolio.vercel.app](https://luca-alejandro-fisogni-portfolio.vercel.app)
 
-- **Diseño Moderno**: Cards animadas con efectos 3D y parallax
-- **Totalmente Responsive**: Se adapta a cualquier dispositivo
-- **Animaciones Suaves**: Efectos de scroll y hover profesionales
-- **Fácil Personalización**: Sistema de configuración simple
-- **Optimizado**: Carga rápida y rendimiento optimizado
+## Sobre el proyecto
 
-## 🛠️ Personalización Rápida
+Sitio estático de una sola página con secciones de presentación, sobre mí, proyectos y contacto. Diseño oscuro con acentos violeta, animaciones al scroll y cards interactivas para cada proyecto.
 
-### 1. Información Personal
+### Secciones
 
-Edita directamente en el HTML o usa JavaScript:
+- **Inicio** — Presentación, descripción profesional y descarga de CV
+- **Sobre mí** — Perfil, stack tecnológico y enfoque de trabajo
+- **Proyectos** — ClipFlow, Mystic Trading, Thot y Minerva con enlaces a demos
+- **Contacto** — Datos de contacto y formulario con envío por EmailJS
 
-```javascript
-Portfolio.updatePersonalInfo({
-    name: "Tu Nombre",
-    title: "Tu Título Profesional",
-    description: "Tu descripción personal",
-    email: "tu.email@ejemplo.com",
-    phone: "+34 123 456 789",
-    location: "Tu Ciudad, País"
-});
-```
+### Proyectos destacados
 
-### 2. Agregar Proyectos
+| Proyecto | Descripción | Demo |
+|----------|-------------|------|
+| **ClipFlow** | Generador de clips para creadores con IA, Cloudinary y Supabase | [clip-flow-studio.vercel.app](https://clip-flow-studio.vercel.app) |
+| **Mystic Trading** | Landing page para comunidad de trading con animaciones y temas | [mystic-trading.vercel.app](https://mystic-trading.vercel.app) |
+| **Thot** | Plataforma de gestión de objetivos para equipos | [thot-scout-sys.vercel.app](https://thot-scout-sys.vercel.app/login) |
+| **Minerva** | Automatización de documentación técnica con IA | [minerva-nine-xi.vercel.app](https://minerva-nine-xi.vercel.app) |
 
-```javascript
-Portfolio.addProject({
-    title: "Nombre del Proyecto",
-    description: "Descripción del proyecto...",
-    image: "images/proyecto.jpg",
-    demoUrl: "https://demo.com",
-    codeUrl: "https://github.com/tu-usuario/proyecto",
-    tags: ["React", "Node.js", "MongoDB"]
-});
-```
+## Stack tecnológico
 
-### 3. Actualizar Habilidades
+| Área | Tecnologías |
+|------|-------------|
+| Estructura | HTML5, CSS3, JavaScript (vanilla) |
+| Estilos | Variables CSS, Montserrat, diseño responsive |
+| Animaciones | [AOS](https://michalsnik.github.io/aos/) (Animate On Scroll) |
+| Iconos | Font Awesome 6 |
+| Contacto | [EmailJS](https://www.emailjs.com/) |
+| Deploy | Vercel |
 
-```javascript
-Portfolio.updateSkills([
-    "JavaScript", "React", "Node.js", "Python", 
-    "HTML/CSS", "MongoDB", "Git", "Docker"
-]);
-```
-
-### 4. Personalizar Estadísticas
-
-```javascript
-Portfolio.updateStats([
-    { number: "3+", label: "Años de Experiencia" },
-    { number: "25+", label: "Proyectos Completados" },
-    { number: "100%", label: "Satisfacción del Cliente" }
-]);
-```
-
-## 📁 Estructura de Archivos
+## Estructura del repositorio
 
 ```
 portfolio/
-├── index.html          # Página principal
+├── index.html              # Página principal
 ├── css/
-│   └── styles.css      # Estilos principales
+│   └── styles.css          # Estilos y variables de diseño
 ├── js/
-│   └── script.js       # Funcionalidades JavaScript
-├── images/             # Carpeta para imágenes
-│   ├── profile.jpg     # Tu foto de perfil
-│   ├── project1.jpg    # Imagen del proyecto 1
-│   ├── project2.jpg    # Imagen del proyecto 2
-│   └── ...
-└── README.md          # Este archivo
+│   └── script.js           # Navegación, animaciones y formulario
+├── images/                 # Imágenes del portfolio y proyectos
+├── emailjs-template.html   # Template HTML para emails de contacto
+├── EMAILJS_SETUP.md        # Guía de configuración de EmailJS
+├── personalizacion.js      # Ejemplos de personalización (referencia)
+├── Nocturnys/              # Proyecto creativo en desarrollo
+└── README.md
 ```
 
-## 🖼️ Imágenes Requeridas
+## Desarrollo local
 
-Para un funcionamiento completo, agrega estas imágenes a la carpeta `images/`:
+No requiere instalación de dependencias ni build step.
 
-- `profile.jpg` - Tu foto de perfil (350x350px recomendado)
-- `project1.jpg` - Imagen del proyecto 1
-- `project2.jpg` - Imagen del proyecto 2
-- `project3.jpg` - Imagen del proyecto 3
-- `project4.jpg` - Imagen del proyecto 4
+1. Cloná el repositorio:
+   ```bash
+   git clone https://github.com/alfisogni/portfolio.git
+   cd portfolio
+   ```
 
-### Tamaños Recomendados:
-- **Foto de perfil**: 350x350px (cuadrada)
-- **Imágenes de proyectos**: 400x250px (rectangular)
+2. Abrí `index.html` en el navegador, o usá un servidor local:
+   ```bash
+   npx serve .
+   ```
 
-## 🎨 Personalización de Colores
+El formulario de contacto necesita credenciales de EmailJS configuradas en `js/script.js`. Los pasos están en [EMAILJS_SETUP.md](./EMAILJS_SETUP.md).
 
-Modifica las variables CSS en `styles.css`:
+## Contacto
 
-```css
-:root {
-    --primary-color: #667eea;      /* Color principal */
-    --secondary-color: #764ba2;    /* Color secundario */
-    --accent-color: #f093fb;       /* Color de acento */
-    --dark-color: #2c3e50;         /* Color oscuro */
-    --text-color: #333;            /* Color del texto */
-}
-```
+- **Email:** alfisogni@gmail.com
+- **LinkedIn:** [luca-fisogni](https://www.linkedin.com/in/luca-fisogni-50279a350)
+- **GitHub:** [alfisogni](https://github.com/alfisogni)
 
-## 📱 Secciones del Portfolio
+---
 
-### 1. **Hero/Inicio**
-- Presentación personal
-- Foto de perfil con animación flotante
-- Botones de acción
-
-### 2. **Sobre Mí**
-- Descripción personal
-- Habilidades técnicas
-- Estadísticas profesionales
-
-### 3. **Proyectos** ⭐
-- Cards animadas con efectos 3D
-- Overlay con enlaces a demo y código
-- Tags de tecnologías utilizadas
-- Efectos hover avanzados
-
-### 4. **Contacto**
-- Información de contacto
-- Formulario funcional
-- Enlaces a redes sociales
-
-## 🚀 Cómo Usar
-
-1. **Descarga/Clona** el proyecto
-2. **Personaliza** la información en `index.html`
-3. **Agrega tus imágenes** en la carpeta `images/`
-4. **Modifica colores** si deseas en `styles.css`
-5. **Abre** `index.html` en tu navegador
-
-## 💡 Consejos de Personalización
-
-### Para Desarrolladores:
-- Modifica directamente el HTML para cambios permanentes
-- Usa las funciones JavaScript para cambios dinámicos
-- Personaliza las animaciones en `script.js`
-
-### Para No Desarrolladores:
-- Cambia solo los textos en `index.html`
-- Reemplaza las imágenes manteniendo los nombres
-- Usa las funciones JavaScript básicas
-
-## 🎯 Funcionalidades Destacadas
-
-### Cards de Proyectos:
-- ✨ Efectos 3D al hacer hover
-- 🌟 Animaciones de entrada escalonadas
-- 🔄 Overlay con botones de acción
-- 📱 Completamente responsive
-
-### Animaciones:
-- 📜 Scroll suave entre secciones
-- 🎭 Animaciones AOS (Animate On Scroll)
-- ⌨️ Efecto de escritura automática
-- 🎨 Parallax en la imagen de perfil
-
-### Interactividad:
-- 📱 Menú móvil responsive
-- ✉️ Formulario de contacto animado
-- 🎯 Navegación inteligente
-- 🖱️ Efectos hover profesionales
-
-## 🔧 Personalización Avanzada
-
-### Agregar Nuevas Secciones:
-1. Crea el HTML correspondiente
-2. Agrega los estilos CSS
-3. Actualiza la navegación
-4. Añade animaciones si es necesario
-
-### Modificar Animaciones:
-- Cambia la duración en `AOS.init()`
-- Personaliza los efectos hover en CSS
-- Modifica las transiciones en las variables CSS
-
-## 📞 Soporte
-
-Si necesitas ayuda con la personalización:
-1. Revisa los comentarios en el código
-2. Consulta la documentación de AOS
-3. Experimenta con las variables CSS
-
-## 🎉 ¡Listo para Personalizar!
-
-Tu portfolio está preparado para ser completamente tuyo. Solo necesitas:
-1. Cambiar los textos por tu información
-2. Agregar tus imágenes
-3. Personalizar los colores si deseas
-
-¡Disfruta de tu nuevo portfolio profesional! 🚀
+© 2025 Luca Alejandro Fisogni

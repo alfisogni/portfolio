@@ -96,13 +96,17 @@ export function Hero() {
             Luca Alejandro Fisogni
           </motion.p>
           <motion.h1
-            className="mb-6 w-full text-balance bg-gradient-to-b from-white via-white/95 to-white/70 bg-clip-text font-medium tracking-[-0.02em] text-transparent"
-            style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(2.25rem, 6.2vw, 7rem)", lineHeight: 1.05 }}
+            className="mb-6 w-full bg-gradient-to-b from-white via-white/95 to-white/70 bg-clip-text font-medium tracking-[-0.02em] text-transparent"
+            style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(2rem, 5vw, 6.25rem)", lineHeight: 1.05 }}
             initial={enter}
             animate={shown}
             transition={enterTransition}
           >
-            {copy.hero.lines.join(" ")}
+            {copy.hero.lines.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
           </motion.h1>
           </div>
           <motion.div

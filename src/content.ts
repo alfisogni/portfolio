@@ -122,7 +122,7 @@ export const copy: Record<Locale, Copy> = {
       language: "Idioma",
     },
     hero: {
-      lines: ["Diseñando y", "construyendo", "experiencias", "digitales."],
+      lines: ["Diseñando y construyendo", "experiencias digitales."],
       cta: "Dejá tu email",
       prompt: "Dejá tu email y te escribo",
       thanks: "Gracias, te escribo pronto",
@@ -205,7 +205,7 @@ export const copy: Record<Locale, Copy> = {
       language: "Language",
     },
     hero: {
-      lines: ["Designing and", "building", "digital", "experiences."],
+      lines: ["Designing and building", "digital experiences."],
       cta: "Get in touch",
       prompt: "Leave Your Email And I'll Reach Out",
       thanks: "Thanks, I'll Be In Touch Soon",

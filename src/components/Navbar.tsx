@@ -21,9 +21,9 @@ export function Navbar() {
   return (
     <motion.nav
       className="fixed inset-x-0 top-0 z-30 w-full px-4 py-4 md:px-6 md:py-6"
-      initial={reduced ? { opacity: 0 } : { y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={reduced ? { duration: 0.2, ease: "easeOut" } : { duration: 0.45, ease: "easeOut" }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: reduced ? 0.2 : 0.45, ease: "easeOut" }}
     >
       <div className="liquid-glass mx-auto flex max-w-5xl flex-col gap-1 rounded-3xl px-4 py-2 md:flex-row md:items-center md:justify-between md:gap-3 md:rounded-full md:px-6">
         <div className="flex min-w-0 items-center justify-between gap-3 md:contents">

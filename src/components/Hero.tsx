@@ -83,7 +83,7 @@ export function Hero() {
 
   return (
     <section id="top" className="relative flex flex-1 flex-col items-center justify-center px-6">
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-12 text-center">
+      <div className="relative z-10 mx-auto flex w-full flex-col items-center justify-center gap-12 text-center">
         <div className="flex w-full flex-col items-center">
           <div className="flex w-full flex-col items-center">
           <motion.p
@@ -96,17 +96,13 @@ export function Hero() {
             Luca Alejandro Fisogni
           </motion.p>
           <motion.h1
-            className="mx-auto mb-6 max-w-4xl bg-gradient-to-b from-white via-white/95 to-white/70 bg-clip-text text-4xl leading-[1.1] font-medium tracking-[-0.02em] text-transparent md:text-[64px]"
-            style={{ fontFamily: "'Instrument Serif', serif" }}
+            className="mb-6 w-full text-balance bg-gradient-to-b from-white via-white/95 to-white/70 bg-clip-text font-medium tracking-[-0.02em] text-transparent"
+            style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(2.25rem, 6.2vw, 7rem)", lineHeight: 1.05 }}
             initial={enter}
             animate={shown}
             transition={enterTransition}
           >
-            {copy.hero.lines.map((line) => (
-              <span key={line} className="block">
-                {line}
-              </span>
-            ))}
+            {copy.hero.lines.join(" ")}
           </motion.h1>
           </div>
           <motion.div

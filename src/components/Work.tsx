@@ -6,7 +6,7 @@ export function Work() {
   const { copy } = useLocale()
 
   return (
-    <section id="work" className="scroll-mt-28 px-4 py-8 md:px-6">
+    <section id="work" className="px-4 py-8 md:px-6">
       <div className="liquid-glass mx-auto max-w-5xl rounded-[32px] px-6 py-14 md:px-12 md:py-16">
         <h2
           className="text-4xl leading-none font-medium tracking-[-0.02em] text-white md:text-5xl"

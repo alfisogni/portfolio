@@ -13,17 +13,19 @@ export default function App() {
     <LocaleProvider>
       <WriteProvider>
       <VideoProvider>
-      <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
+      <div className="h-dvh overflow-hidden bg-black text-white selection:bg-white selection:text-black">
         <BackgroundVideo />
         <LocaleFade>
-          <div className="relative z-10">
+          <div className="relative z-10 flex h-dvh flex-col">
             <Navbar />
-            <section className="flex min-h-screen flex-col pt-40 md:pt-28">
-              <Hero />
-            </section>
-            <About />
-            <Work />
-            <Contact />
+            <div className="page-scroll min-h-0 flex-1 overflow-y-auto overscroll-contain scroll-smooth">
+              <section className="flex min-h-full flex-col">
+                <Hero />
+              </section>
+              <About />
+              <Work />
+              <Contact />
+            </div>
           </div>
         </LocaleFade>
       </div>

@@ -20,7 +20,7 @@ export function Navbar() {
 
   return (
     <motion.nav
-      className="fixed inset-x-0 top-0 z-30 w-full px-4 py-4 md:px-6 md:py-6"
+      className="relative z-30 w-full shrink-0 px-4 py-4 md:px-6 md:py-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: reduced ? 0.2 : 0.45, ease: "easeOut" }}

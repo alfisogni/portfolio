@@ -9,7 +9,7 @@ export function About() {
   const reduced = useReducedMotion()
 
   return (
-    <section id="about" className="scroll-mt-28 px-4 py-24 md:px-6 md:py-32">
+    <section id="about" className="px-4 py-24 md:px-6 md:py-32">
       <div className="mx-auto flex max-w-5xl flex-col gap-16 md:gap-28">
         <article className="liquid-glass w-full rounded-[28px] px-6 py-8 md:mr-auto md:w-[86%] md:px-10 md:py-10">
           <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-center">

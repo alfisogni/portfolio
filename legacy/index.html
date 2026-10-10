@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Alejandro Fisogni - Portfolio</title>
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>LUCA FISOGNI</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Inicio</a>
+                <a href="#about" class="nav-link">Sobre Mí</a>
+                <a href="#projects" class="nav-link">Proyectos</a>
+                <a href="#contact" class="nav-link">Contacto</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 data-aos="fade-up">Hola, soy <span class="highlight">Luca Alejandro Fisogni</span></h1>
+            <h2 data-aos="fade-up" data-aos-delay="200">Desarrollador Web — Frontend & Diseño de Interfaces</h2>
+            <p data-aos="fade-up" data-aos-delay="400">
+                Soy desarrollador web enfocado en frontend y diseño de interfaces, interesado en construir
+                productos claros y funcionales, bien pensados desde la experiencia de usuario hasta la
+                implementación técnica. Trabajo principalmente con React y TypeScript, desarrollando
+                interfaces modernas, dashboards y aplicaciones web completas. Tengo experiencia integrando
+                APIs, gestionando datos y estructurando proyectos para que sean mantenibles y escalables.
+            </p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                <a href="#projects" class="btn-primary">Ver Proyectos</a>
+                <a href="#contact" class="btn-secondary">Contactar</a>
+                <a href="Fisogni_Luca_Alejandro_CV.pdf" download="Luca_Fisogni_CV.pdf" class="btn-download">
+                    <i class="fas fa-download"></i> Descargar CV
+                </a>
+            </div>
+        </div>
+        <div class="hero-image" data-aos="fade-left" data-aos-delay="800">
+            <img src="images/YoGeneradoIApng.png" alt="Foto de Luca" class="profile-img">
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 data-aos="fade-up">Sobre Mí</h2>
+            <div class="about-content">
+                    <div class="about-text" data-aos="fade-right">
+                        <p>
+                            Soy desarrollador web con foco en frontend y arquitectura de interfaces. Participo
+                            en todo el proceso: diseño de interfaz, arquitectura frontend y desarrollo de
+                            producto. Me gusta trabajar en soluciones que combinan lógica técnica sólida con una
+                            experiencia de usuario cuidada.
+                        </p>
+                        <p>
+                            Utilizo herramientas de IA como apoyo para acelerar prototipos, explorar ideas y
+                            mejorar la productividad, manteniendo siempre el control sobre la arquitectura del
+                            sistema. Me caracterizo por la proactividad, curiosidad técnica y rapidez para
+                            aprender. Busco seguir creciendo en roles orientados a frontend y producto,
+                            aportando calidad de software y foco en UX.
+                        </p>
+                    <div class="skills">
+                        <h3>Tecnologías</h3>
+                        <div class="skills-grid">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">SharePoint</span>
+                            <span class="skill-tag">API REST</span>
+                            <span class="skill-tag">SCSS</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">IA Prompts</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+                    <div class="about-stats" data-aos="fade-left">
+                        <div class="stat">
+                            <h3>Frontend</h3>
+                            <p>React · TypeScript</p>
+                        </div>
+                        <div class="stat">
+                            <h3>UX & Product</h3>
+                            <p>Diseño de interfaces</p>
+                        </div>
+                        <div class="stat">
+                            <h3>AI-assisted</h3>
+                            <p>Prototipado y productividad</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 data-aos="fade-up">Mis Proyectos</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Algunos trabajos recientes que destacan mis habilidades
+            </p>
+            
+            <div class="projects-grid">
+                <!-- ClipFlow - Primera card -->
+                <div class="project-card clipflow" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-image">
+                        <img src="images/ClipFlowpng.png" alt="ClipFlow — Generador de Clips MP4">
+                        <div class="card-overlay">
+                            <div class="card-actions">
+                                <a href="https://clip-flow-studio.vercel.app" target="_blank" rel="noopener" class="action-btn" title="Ver Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>ClipFlow</h3>
+                        <p>Generador de clips para creadores: subí un MP4, la IA genera timestamps, títulos y descripciones; se procesan los clips vía Cloudinary y se entregan con signed URLs.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Supabase</span>
+                            <span class="tag">Cloudinary</span>
+                            <span class="tag">Gemini AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mystic Trading - Segunda card -->
+                <div class="project-card mystic" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-image">
+                        <img src="images/BannerMystic2.jpeg" alt="Mystic Trading — Landing Page">
+                        <div class="card-overlay">
+                            <div class="card-actions">
+                                <a href="https://mystic-trading.vercel.app" target="_blank" rel="noopener" class="action-btn" title="Ver Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Mystic Trading</h3>
+                        <p>Landing page moderna para comunidad de trading con arquitectura limpia, componentes reutilizables, animaciones fluidas y sistema de temas. Incluye secciones dinámicas y formularios validados.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">shadcn/ui</span>
+                            <span class="tag">Framer Motion</span>
+                        </div>
+                    </div>
+                </div>
+
+               <!-- Proyecto Thot — tarjeta extendida -->
+<div class="project-card thot" data-aos="fade-up" data-aos-delay="500">
+    <div class="card-image">
+        <img src="images/ThotBanner.png" alt="Thot — Plataforma Monorepo">
+        <div class="card-overlay">
+                            <div class="card-actions">
+                                <a href="https://thot-scout-sys.vercel.app/login" target="_blank" rel="noopener" class="action-btn" title="Ver Demo / Repo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+        </div>
+    </div>
+    <div class="card-content">
+        <h3>Thot</h3>
+        <p>
+            Plataforma de gestión de objetivos orientada a equipos construida sobre arquitectura desacoplada, diseñada para planificar, ejecutar y monitorear el progreso de forma estructurada. Permite descomponer metas en subtareas, centralizar la colaboración y visualizar el estado general mediante un dashboard intuitivo.
+            
+        </p>
+        <div class="project-tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <!-- <span class="tag">Vite</span> -->
+            <span class="tag">Ant Design</span>
+            <span class="tag">JWT</span>
+        </div>
+    </div>
+</div>
+
+                <!-- Minerva - Cuarta card -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-image">
+                        <img src="images/MInervaVar1.png" alt="Minerva — Sistema de Automatización de Documentación">
+                        <div class="card-overlay">
+                            <div class="card-actions">
+                                <a href="https://minerva-nine-xi.vercel.app" target="_blank" rel="noopener" class="action-btn" title="Ver Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Minerva</h3>
+                        <p>Sistema de automatización de documentación técnica con IA. Procesa múltiples archivos de proyecto, genera documentos Word estructurados con 12 secciones profesionales, gestión de versiones e historial de actividad.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Ant Design</span>
+                            <span class="tag">IA Integration</span>
+                            <span class="tag">Document Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-aos="fade-up">Contacto</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                ¿Tienes un proyecto en mente? ¡Hablemos!
+            </p>
+            
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>alfisogni@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+54 11 5637 4045</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Ubicación</h3>
+                            <p>Isidro Casanova, Buenos Aires, Argentina</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" data-aos="fade-left" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="from_name" placeholder="Tu Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="from_email" placeholder="Tu Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Tu Mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Luca Alejandro Fisogni. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/luca-fisogni-50279a350" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/alfisogni" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <!-- <a href="https://www.bandlab.com/luka_182" target="_blank" aria-label="BandLab" class="bandlab-icon"><i class="fas fa-music"></i></a> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -28,46 +28,34 @@ Sitio estático de una sola página con secciones de presentación, sobre mí, p
 
 | Área | Tecnologías |
 |------|-------------|
-| Estructura | HTML5, CSS3, JavaScript (vanilla) |
-| Estilos | Variables CSS, Montserrat, diseño responsive |
-| Animaciones | [AOS](https://michalsnik.github.io/aos/) (Animate On Scroll) |
-| Iconos | Font Awesome 6 |
-| Contacto | [EmailJS](https://www.emailjs.com/) |
-| Deploy | Vercel |
+| App | React, TypeScript, Vite |
+| Estilos | Tailwind CSS |
+| Video | hls.js, reel de Mux |
+| Contacto | EmailJS |
+| Deploy | Vercel, al pushear `main` de este repo |
 
 ## Estructura del repositorio
 
 ```
 portfolio/
-├── index.html              # Página principal
-├── css/
-│   └── styles.css          # Estilos y variables de diseño
-├── js/
-│   └── script.js           # Navegación, animaciones y formulario
-├── images/                 # Imágenes del portfolio y proyectos
-├── emailjs-template.html   # Template HTML para emails de contacto
-├── EMAILJS_SETUP.md        # Guía de configuración de EmailJS
-├── personalizacion.js      # Ejemplos de personalización (referencia)
+├── index.html              # Entrada de Vite
+├── src/                    # La landing
+├── public/                 # Foto, proyectos, CV
+├── .ai/                    # Grafo corto para el agente
+├── legacy/                 # Sitio estático anterior
 ├── Nocturnys/              # Proyecto creativo en desarrollo
+├── vercel.json             # Build de Vite, salida dist
 └── README.md
 ```
 
 ## Desarrollo local
 
-No requiere instalación de dependencias ni build step.
+```bash
+npm install
+npm run dev -- --host 127.0.0.1 --port 5179
+```
 
-1. Cloná el repositorio:
-   ```bash
-   git clone https://github.com/alfisogni/portfolio.git
-   cd portfolio
-   ```
-
-2. Abrí `index.html` en el navegador, o usá un servidor local:
-   ```bash
-   npx serve .
-   ```
-
-El formulario de contacto necesita credenciales de EmailJS configuradas en `js/script.js`. Los pasos están en [EMAILJS_SETUP.md](./EMAILJS_SETUP.md).
+Vercel corre `npm run build` y publica `dist`. El push tiene que ser a `main` de este repositorio.
 
 ## Contacto
 

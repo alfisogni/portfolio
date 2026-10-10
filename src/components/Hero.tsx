@@ -87,7 +87,7 @@ export function Hero() {
         <div className="flex w-full flex-col items-center">
           <div className="flex w-full flex-col items-center">
           <motion.p
-            className="mb-4 text-2xl leading-none text-white md:text-[32px]"
+            className="mb-4 text-[1.85rem] leading-none text-white md:text-[32px]"
             style={{ fontFamily: "'Instrument Serif', serif" }}
             initial={enter}
             animate={shown}
@@ -97,7 +97,7 @@ export function Hero() {
           </motion.p>
           <motion.h1
             className="mb-6 w-full bg-gradient-to-b from-white via-white/95 to-white/70 bg-clip-text font-medium tracking-[-0.02em] text-transparent"
-            style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(2rem, 5vw, 6.25rem)", lineHeight: 1.05 }}
+            style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(2.35rem, 7.4vw, 6.25rem)", lineHeight: 1.08 }}
             initial={enter}
             animate={shown}
             transition={enterTransition}

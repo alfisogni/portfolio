@@ -83,7 +83,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={openWrite}
-            className="pressable inline-flex h-11 items-center rounded-full bg-black/55 px-4 text-sm font-medium whitespace-nowrap text-white"
+            className="pressable hidden h-11 items-center rounded-full bg-black/55 px-4 text-sm font-medium whitespace-nowrap text-white md:inline-flex"
           >
             {copy.hero.cta}
           </button>

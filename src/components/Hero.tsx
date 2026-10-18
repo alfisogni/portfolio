@@ -86,7 +86,7 @@ export function Hero() {
       <div className="relative z-10 mx-auto flex w-full flex-col items-center justify-center gap-12 text-center">
         <div className="flex w-full flex-col items-center">
           <div className="flex w-full flex-col items-center">
-          <motion.p
+          <motion.h1
             className="mb-4 text-[1.85rem] leading-none text-white md:text-[32px]"
             style={{ fontFamily: "'Instrument Serif', serif" }}
             initial={enter}
@@ -94,8 +94,8 @@ export function Hero() {
             transition={{ ...enterTransition, delay: reduced ? 0 : 0.1 }}
           >
             Luca Alejandro Fisogni
-          </motion.p>
-          <motion.h1
+          </motion.h1>
+          <motion.p
             className="mb-6 w-full bg-gradient-to-b from-white via-white/95 to-white/70 bg-clip-text font-medium tracking-[-0.02em] text-transparent"
             style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(2.35rem, 7.4vw, 6.25rem)", lineHeight: 1.08 }}
             initial={enter}
@@ -107,7 +107,7 @@ export function Hero() {
                 {line}
               </span>
             ))}
-          </motion.h1>
+          </motion.p>
           </div>
           <motion.div
             className="mt-2 flex min-h-[50px] w-full flex-col items-center justify-center"

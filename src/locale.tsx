@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react"
 import { copy, type Locale } from "./content.ts"
+import { applyLocaleSeo } from "./seo.ts"
 
 const STORAGE_KEY = "locale"
 
@@ -27,6 +28,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = locale
+    applyLocaleSeo(locale)
     try {
       localStorage.setItem(STORAGE_KEY, locale)
     } catch {

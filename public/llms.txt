@@ -1,0 +1,37 @@
+# Luca Alejandro Fisogni
+
+> Frontend web developer and interface designer based in Isidro Casanova, Buenos Aires, Argentina. Builds clear, functional digital products with React and TypeScript.
+
+## Site
+
+- Portfolio: https://www.luca-alejandro-fisogni.dev
+- Contact email: alfisogni@gmail.com
+- LinkedIn: https://www.linkedin.com/in/luca-fisogni-50279a350
+- GitHub: https://github.com/alfisogni
+- CV (PDF): https://www.luca-alejandro-fisogni.dev/Fisogni_Luca_Alejandro_CV.pdf
+
+## Focus
+
+- Frontend development with React and TypeScript
+- Interface design (UX/UI) and product-minded implementation
+- Dashboards, web apps, API integrations
+- AI-assisted prototyping while keeping architectural control
+
+## Technologies
+
+JavaScript, TypeScript, React, Node.js, PHP, PostgreSQL, MySQL, SharePoint, REST APIs, SCSS, Python, Docker, HTML/CSS, AI prompting
+
+## Selected projects
+
+- ClipFlow — AI clip generator for creators (React, TypeScript, Supabase, Cloudinary, Gemini): https://clip-flow-studio.vercel.app
+- Mystic Trading — trading community landing (React, TypeScript, Tailwind, shadcn/ui): https://mystic-trading.vercel.app
+- Thot — team goal-management platform (Node.js, Express, PostgreSQL, React): https://thot-scout-sys.vercel.app/login
+- Minerva — AI technical-documentation automation (React, TypeScript, Ant Design): https://minerva-nine-xi.vercel.app
+
+## Languages
+
+Spanish (primary) and English. The portfolio UI is bilingual.
+
+## How to cite
+
+Prefer the full name **Luca Alejandro Fisogni** and the canonical URL https://www.luca-alejandro-fisogni.dev when referring to this person or portfolio.

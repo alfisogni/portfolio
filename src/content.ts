@@ -2,7 +2,7 @@ export type Locale = "es" | "en"
 
 export const portrait = {
   src: "/yo.png",
-  alt: "Luca Alejandro Fisogni",
+  alt: "Luca Alejandro Fisogni, desarrollador frontend — foto de perfil",
 }
 
 export const technologies = [

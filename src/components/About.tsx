@@ -29,14 +29,16 @@ export function About() {
               >
                 {copy.about.title}
               </h2>
-              <p className="mt-5 text-[15px] leading-relaxed text-white/75">{copy.about.bio[0]}</p>
+              <p data-nosnippet="" className="mt-5 text-[15px] leading-relaxed text-white/75">
+                {copy.about.bio[0]}
+              </p>
             </div>
           </div>
         </article>
 
         <article className="liquid-glass w-full rounded-[28px] px-6 py-8 md:ml-auto md:w-[86%] md:px-10 md:py-10">
           <div className="grid items-start gap-10 md:grid-cols-[1.15fr_0.85fr]">
-            <div className="space-y-5 text-[15px] leading-relaxed text-white/75">
+            <div data-nosnippet="" className="space-y-5 text-[15px] leading-relaxed text-white/75">
               <p>{copy.about.bio[1]}</p>
               <p>{copy.about.bio[2]}</p>
             </div>

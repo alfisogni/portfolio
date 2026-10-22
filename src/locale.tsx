@@ -19,21 +19,24 @@ function readLocale(): Locale {
   } catch {
     /* private mode */
   }
-  if (navigator.language.toLowerCase().startsWith("es")) return "es"
-  return "en"
+  return "es"
 }
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<Locale>(readLocale)
+  const [locale, setLocaleState] = useState<Locale>(readLocale)
+
+  const setLocale = (next: Locale) => {
+    try {
+      localStorage.setItem(STORAGE_KEY, next)
+    } catch {
+      /* private mode */
+    }
+    setLocaleState(next)
+  }
 
   useEffect(() => {
     document.documentElement.lang = locale
     applyLocaleSeo(locale)
-    try {
-      localStorage.setItem(STORAGE_KEY, locale)
-    } catch {
-      /* private mode */
-    }
   }, [locale])
 
   return (

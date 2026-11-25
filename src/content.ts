@@ -19,6 +19,7 @@ export const technologies = [
   "Python",
   "Docker",
   "{ai}", // se reemplaza por copy.about.aiPrompts (ES "IA Prompts", EN "AI Prompts")
+  "n8n",
   "HTML/CSS",
 ]
 
@@ -174,8 +175,8 @@ export const copy: Record<Locale, Copy> = {
       ],
       experience: [
         { title: "Frontend", detail: "React · TypeScript" },
-        { title: "UX y producto", detail: "Diseño de interfaces" },
-        { title: "Con ayuda de IA", detail: "Prototipado y productividad" },
+        { title: "UX y producto", detail: "Diseño de interfaces y dirección visual" },
+        { title: "Con ayuda de IA", detail: "Prototipado, automatización y productividad" },
       ],
       technologies: "Tecnologías",
       aiPrompts: "IA Prompts",
@@ -284,8 +285,8 @@ export const copy: Record<Locale, Copy> = {
       ],
       experience: [
         { title: "Frontend", detail: "React · TypeScript" },
-        { title: "UX & Product", detail: "Interface design" },
-        { title: "AI-assisted", detail: "Prototyping and productivity" },
+        { title: "UX & Product", detail: "Interface design and visual direction" },
+        { title: "AI-assisted", detail: "Prototyping, automation and productivity" },
       ],
       technologies: "Technologies",
       aiPrompts: "AI Prompts",

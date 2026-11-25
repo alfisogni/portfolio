@@ -11,7 +11,7 @@ type RevealProps = {
 }
 
 /**
- * Entrada sutil: opacidad + 16 px de desplazamiento, 500 ms, solo transform y opacity.
+ * Entrada sutil: opacidad + 16 px de desplazamiento, 800 ms, solo transform y opacity.
  * Regla: todo es visible en reposo. Lo que ya se ve al cargar nunca se oculta; solo se
  * prepara lo que está por debajo del pliegue, y se muestra apenas se acerca. Con
  * movimiento reducido o sin IntersectionObserver no se toca nada. El estado vive en un

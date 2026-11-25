@@ -60,7 +60,7 @@ export function Navbar() {
       className="relative z-30 w-full shrink-0 px-3 py-1.5 md:px-6 md:py-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: reduced ? 0.2 : 0.45, ease: "easeOut" }}
+      transition={{ duration: reduced ? 0.2 : 0.7, ease: "easeOut" }}
     >
       <div className="liquid-glass mx-auto flex max-w-5xl items-center justify-between gap-2 rounded-full px-2 py-0.5 md:gap-3 md:px-6 md:py-2">
         <div className="flex min-w-0 items-center gap-6 md:gap-8">
@@ -145,7 +145,7 @@ export function Navbar() {
             initial={reduced ? { opacity: 0 } : { opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={reduced ? { opacity: 0 } : { opacity: 0, y: -8 }}
-            transition={{ duration: reduced ? 0.15 : 0.22, ease: "easeOut" }}
+            transition={{ duration: reduced ? 0.15 : 0.32, ease: "easeOut" }}
           >
             <div className="liquid-glass rounded-3xl p-2">
             <ul className="flex flex-col text-base font-medium text-text">

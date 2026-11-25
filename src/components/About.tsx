@@ -31,7 +31,7 @@ export function About() {
           </div>
         </Reveal>
 
-        <Reveal as="article" delay={80} className="card-2 p-card md:col-span-5 md:p-card-lg">
+        <Reveal as="article" delay={120} className="card-2 p-card md:col-span-5 md:p-card-lg">
           <dl className="space-y-6">
             {copy.about.experience.map((item) => (
               <div key={item.title}>

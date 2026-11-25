@@ -21,7 +21,7 @@ One line. The id points at graph.md.
 - contact form: the form is read before the await. React nulls event.currentTarget after it, which used to show an error on a mail that had gone out
 - scroll: Lenis 1.3.27 (exact), one instance on .page-scroll, not window. No GSAP, so one clock (autoRaf). 1.3.28 was 2 days old, so it waits. Off under reduced motion, also if the setting flips while open. Anchors go through lenis.scrollTo from one document listener, because the bar sits outside the scroller
 - scroll: any future inner scroller needs data-lenis-prevent. None exists today
-- reveal: opacity + 16px, 500ms, transform and opacity only. Only what starts below the fold is hidden, and it shows as it nears the view or once the person scrolls past it. Reduced motion hides nothing. The old observer fade on the portrait is gone
+- reveal: opacity + 16px, 800ms, transform and opacity only. Only what starts below the fold is hidden, and it shows as it nears the view or once the person scrolls past it. Reduced motion hides nothing. The old observer fade on the portrait is gone
 - locale: ES | EN, stored in localStorage. “IA Prompts” in ES, “AI Prompts” in EN (about.aiPrompts)
 - phrase: the bar name is “Luca Fisogni”. The photo is only in Sobre mí
 - video: four projects stay, ClipFlow, Mystic, Thot, Minerva
@@ -40,3 +40,4 @@ One line. The id points at graph.md.
 - tech: logos come from simple-icons 16.37.0 (CC0, exact pin, named imports so the bundle keeps 13 icons). SharePoint and CSS are gone from newer simple-icons, so SharePoint lives in src/icons/sharepoint.ts. API REST and IA Prompts use lucide icons. Logos are monochrome on purpose: the palette stays the identity, brand colors would fight it
 - tech: radius comes from r = tile * k / (2 * tan(180deg / n)) in CSS, so adding a technology to content.ts resizes the ring on its own
 - tech: hover does not slow the ring. It stops only while the pointer is held down (the drag gesture) and resumes on release. Luca asked for this
+- motion: entrances are slower on Luca's request, to be enjoyed. Hero 1.2s, bar 0.7s, menu 0.32s, section reveal 800ms (stagger 120ms). Responses to touch (hover, press, 100ms) stay fast. Reduced motion keeps its short fades. The old 500ms and 0.8s values are superseded

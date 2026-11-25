@@ -20,7 +20,7 @@ export function Hero() {
   const shown = { opacity: 1, y: 0 }
   const enterTransition = reduced
     ? { duration: 0.2, ease: "easeOut" as const }
-    : { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }
+    : { duration: 1.2, ease: [0.16, 1, 0.3, 1] as const }
 
   const dismiss = () => {
     if (status === "sending") return
@@ -91,7 +91,7 @@ export function Hero() {
             style={{ fontFamily: "var(--font-display)" }}
             initial={enter}
             animate={shown}
-            transition={{ ...enterTransition, delay: reduced ? 0 : 0.1 }}
+            transition={{ ...enterTransition, delay: reduced ? 0 : 0.15 }}
           >
             Luca Alejandro Fisogni
           </motion.h1>
@@ -113,7 +113,7 @@ export function Hero() {
             className="mt-2 flex min-h-[50px] w-full flex-col items-center justify-center"
             initial={reduced ? { opacity: 0 } : { opacity: 0, y: 10 }}
             animate={shown}
-            transition={{ ...enterTransition, delay: reduced ? 0 : 0.2 }}
+            transition={{ ...enterTransition, delay: reduced ? 0 : 0.3 }}
           >
             <AnimatePresence mode="wait">
               {open ? (
@@ -194,7 +194,7 @@ export function Hero() {
             className="mt-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: reduced ? 0 : 0.35, duration: reduced ? 0.2 : 0.4 }}
+            transition={{ delay: reduced ? 0 : 0.5, duration: reduced ? 0.2 : 0.6 }}
           >
             <a
               href="#work"

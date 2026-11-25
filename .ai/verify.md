@@ -17,3 +17,5 @@ http://127.0.0.1:5179/ at 390 and at 1024.
 - .liquid-glass fill is rgba(10,8,18,.55) and blur is 12px at 390 and at 1024
 - At 375: the nav is under 64px, no link or button under 44x44, overflow 0
 - Menu: opens with focus on the first link, Escape closes and focuses the button, a link closes it, widening to 768 closes it
+- grep finds no glass-pill, no text-[15px], no rounded-[..] and no inline font name in src
+- About at 1024: three rows share the same left and right edges. At 375 they stack with no overflow

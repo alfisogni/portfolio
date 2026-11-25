@@ -87,8 +87,8 @@ export function Hero() {
         <div className="flex w-full flex-col items-center">
           <div className="flex w-full flex-col items-center">
           <motion.h1
-            className="mb-4 text-[1.85rem] leading-none text-white md:text-[32px]"
-            style={{ fontFamily: "'Instrument Serif', serif" }}
+            className="mb-4 text-[1.85rem] leading-none text-text md:text-[32px]"
+            style={{ fontFamily: "var(--font-display)" }}
             initial={enter}
             animate={shown}
             transition={{ ...enterTransition, delay: reduced ? 0 : 0.1 }}
@@ -97,7 +97,7 @@ export function Hero() {
           </motion.h1>
           <motion.p
             className="mb-6 w-full bg-gradient-to-b from-white via-white/95 to-white/70 bg-clip-text font-medium tracking-[-0.02em] text-transparent"
-            style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(2.35rem, 7.4vw, 6.25rem)", lineHeight: 1.08 }}
+            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.35rem, 7.4vw, 6.25rem)", lineHeight: 1.08 }}
             initial={enter}
             animate={shown}
             transition={enterTransition}
@@ -140,12 +140,12 @@ export function Hero() {
                     placeholder={placeholder}
                     aria-label={copy.hero.emailLabel}
                     disabled={status === "sending"}
-                    className="w-full bg-transparent text-base text-white placeholder:text-white/60"
+                    className="w-full bg-transparent text-base text-text placeholder:text-white/60"
                   />
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="pressable flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center text-white disabled:cursor-wait disabled:opacity-60"
+                    className="pressable flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center text-text disabled:cursor-wait disabled:opacity-60"
                     aria-label={
                       status === "sent" ? copy.hero.sent : status === "sending" ? copy.hero.sending : copy.hero.send
                     }
@@ -157,7 +157,7 @@ export function Hero() {
                   type="button"
                   onClick={dismiss}
                   disabled={status === "sending"}
-                  className="pressable h-11 cursor-pointer rounded-full border border-white/20 px-5 text-sm font-medium text-white disabled:cursor-wait disabled:opacity-60"
+                  className="pressable h-11 cursor-pointer rounded-full border border-white/20 px-5 text-sm font-medium text-text disabled:cursor-wait disabled:opacity-60"
                 >
                   {copy.hero.cancel}
                 </button>
@@ -182,7 +182,7 @@ export function Hero() {
               {status === "sent" ? copy.hero.thanks : status === "sending" ? copy.hero.sending : ""}
             </p>
             {status === "error" ? (
-              <p className="mt-3 max-w-sm text-sm text-white/80" role="alert">
+              <p className="mt-3 max-w-sm text-sm text-muted" role="alert">
                 {copy.hero.error}{" "}
                 <a className="underline" href={`mailto:${contact.email}`}>
                   {contact.email}
@@ -198,7 +198,7 @@ export function Hero() {
           >
             <a
               href="#work"
-              className="pressable inline-flex h-11 min-w-11 items-center text-[13px] font-medium tracking-wide text-white/80 transition-colors duration-300 hover:text-white"
+              className="pressable inline-flex h-11 min-w-11 items-center text-[13px] font-medium tracking-wide text-muted transition-colors duration-300 hover:text-text"
             >
               {copy.hero.work}
             </a>

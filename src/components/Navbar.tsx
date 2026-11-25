@@ -65,14 +65,14 @@ export function Navbar() {
       <div className="liquid-glass mx-auto flex max-w-5xl items-center justify-between gap-2 rounded-full px-2 py-0.5 md:gap-3 md:px-6 md:py-2">
         <div className="flex min-w-0 items-center gap-6 md:gap-8">
           <a href="#top" className="pressable inline-flex h-11 min-w-11 items-center pl-2 md:pl-0">
-            <span className="text-base font-semibold whitespace-nowrap text-white md:text-lg">Luca Fisogni</span>
+            <span className="text-base font-semibold whitespace-nowrap text-text md:text-lg">Luca Fisogni</span>
           </a>
-          <div className="hidden items-center gap-8 text-sm font-medium text-white/80 md:flex">
+          <div className="hidden items-center gap-8 text-sm font-medium text-muted md:flex">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="pressable transition-colors duration-300 hover:text-white"
+                className="pressable transition-colors duration-300 hover:text-text"
               >
                 {link.label}
               </a>
@@ -92,7 +92,7 @@ export function Navbar() {
                 aria-pressed={locale === code}
                 onClick={() => setLocale(code)}
                 className={`pressable h-11 min-w-11 rounded-full px-2 text-xs font-semibold tracking-wide ${
-                  locale === code ? "bg-white text-black" : "text-white"
+                  locale === code ? "bg-white text-black" : "text-text"
                 }`}
               >
                 {code.toUpperCase()}
@@ -104,21 +104,21 @@ export function Navbar() {
             onClick={toggle}
             aria-pressed={paused}
             aria-label={paused ? copy.video.play : copy.video.pause}
-            className="pressable inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-white"
+            className="pressable inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-text"
           >
             {paused ? <Play className="h-4 w-4" aria-hidden="true" /> : <Pause className="h-4 w-4" aria-hidden="true" />}
           </button>
           <a
             href={cvHref}
             download="Luca_Fisogni_CV.pdf"
-            className="pressable hidden h-11 items-center px-1 text-sm font-medium whitespace-nowrap text-white transition-colors hover:text-white/80 md:inline-flex"
+            className="pressable hidden h-11 items-center px-1 text-sm font-medium whitespace-nowrap text-text transition-colors hover:text-muted md:inline-flex"
           >
             {copy.nav.resume}
           </a>
           <button
             type="button"
             onClick={openWrite}
-            className="pressable hidden h-11 items-center rounded-full bg-black/55 px-4 text-sm font-medium whitespace-nowrap text-white md:inline-flex"
+            className="pressable hidden h-11 items-center rounded-full bg-black/55 px-4 text-sm font-medium whitespace-nowrap text-text md:inline-flex"
           >
             {copy.hero.cta}
           </button>
@@ -129,7 +129,7 @@ export function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? copy.nav.closeMenu : copy.nav.menu}
-            className="pressable inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-white md:hidden"
+            className="pressable inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-text md:hidden"
           >
             {open ? <X className="h-4 w-4" aria-hidden="true" /> : <Menu className="h-4 w-4" aria-hidden="true" />}
           </button>
@@ -148,7 +148,7 @@ export function Navbar() {
             transition={{ duration: reduced ? 0.15 : 0.22, ease: "easeOut" }}
           >
             <div className="liquid-glass rounded-3xl p-2">
-            <ul className="flex flex-col text-base font-medium text-white">
+            <ul className="flex flex-col text-base font-medium text-text">
               {links.map((link) => (
                 <li key={link.href}>
                   <a

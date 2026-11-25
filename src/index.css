@@ -2,13 +2,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
 @import "tailwindcss";
 
+/*
+ * TOKENS. Una sola fuente de verdad: cada valor suelto del sitio sale de acá.
+ * Color: la paleta nace del humo del video (azul-índigo apagado). El acento es el único
+ * color con matiz y se usa solo en foco, hover y detalles; nunca como relleno.
+ */
 @theme {
+  /* Color */
+  --color-ink: #050408; /* fondo base y velo */
+  --color-surface: rgb(10 8 18 / 0.55); /* relleno de la tarjeta principal */
+  --color-surface-soft: rgb(10 8 18 / 0.25); /* relleno de tarjetas secundarias */
+  --color-line: rgb(255 255 255 / 0.14); /* bordes finos */
+  --color-text: #ffffff; /* títulos */
+  --color-muted: rgb(255 255 255 / 0.78); /* cuerpo, mínimo AA medido */
+  --color-faint: rgb(255 255 255 / 0.65); /* etiquetas chicas, el piso permitido */
+  --color-accent: #a99bf7; /* foco, hover, detalles */
+
+  /* Tipografía: display para títulos, sans para el resto */
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+
+  /* Escala: xs 12 · sm 14 · body 15 · base 16 · lg 18 · 2xl 24 · heading 36→48 · hero (clamp propio) */
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.65;
+  --text-heading: clamp(2.25rem, 1.6rem + 2vw, 3rem);
+  --text-heading--line-height: 1;
+  --text-heading--letter-spacing: -0.02em;
+
+  /* Espaciado: base de 4 px (la de Tailwind) + ritmo propio de secciones y tarjetas */
+  --spacing-section: 3rem;
+  --spacing-section-lg: 5rem;
+  --spacing-card: 1.5rem;
+  --spacing-card-lg: 2.5rem;
+
+  /* Radios por rol */
+  --radius-card-1: 28px; /* tarjeta principal */
+  --radius-card-2: 20px; /* tarjetas secundarias y contenedores */
+  --radius-media: 12px; /* imágenes dentro de tarjetas */
 }
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: var(--color-ink);
+  --foreground: var(--color-text);
 }
 
 html {
@@ -17,7 +52,7 @@ html {
 
 /* El poster también vive como fondo del contenedor: nunca hay negro puro antes de cargar. */
 .bg-poster {
-  background-color: #050408;
+  background-color: var(--color-ink);
   background-size: cover;
   background-position: center;
 }
@@ -33,7 +68,7 @@ body {
 }
 
 :focus-visible {
-  outline: 1px solid rgba(255, 255, 255, 0.65);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 
@@ -41,6 +76,37 @@ body {
   background:
     radial-gradient(ellipse 70% 50% at 50% 45%, rgba(5, 4, 8, 0.2), transparent 75%),
     linear-gradient(180deg, rgba(5, 4, 8, 0.42) 0%, rgba(5, 4, 8, 0.3) 45%, rgba(5, 4, 8, 0.38) 100%);
+}
+
+/*
+ * ROLES DE TARJETA. El borde, el relleno y la sombra dicen la jerarquía.
+ * card-1: lo primero que se lee (relleno + sombra). card-2: soporte (solo borde fino).
+ */
+.card-1,
+.card-2 {
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+}
+
+.card-1 {
+  background: var(--color-surface);
+  border-radius: var(--radius-card-1);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.1),
+    0 24px 56px -24px rgb(0 0 0 / 0.7);
+}
+
+.card-2 {
+  background: var(--color-surface-soft);
+  border-radius: var(--radius-card-2);
+}
+
+/* Chip: etiqueta de tecnología. Sin blur propio, ya vive dentro de una tarjeta con blur. */
+.chip {
+  background: rgb(255 255 255 / 0.07);
+  border: 1px solid var(--color-line);
+  border-radius: 9999px;
 }
 
 .liquid-glass {
@@ -76,22 +142,15 @@ body {
   pointer-events: none;
 }
 
-.glass-pill {
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(20px) saturate(180%);
-  border-radius: 9999px;
-  box-shadow: none !important;
-}
-
 .profile-img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(109, 40, 217, 0.15));
+  background: rgb(169 155 247 / 0.12);
   box-shadow:
-    0 12px 32px rgba(139, 92, 246, 0.3),
+    0 12px 32px rgb(169 155 247 / 0.28),
     0 0 0 6px rgba(255, 255, 255, 0.1);
   border: 4px solid #fff;
 }
@@ -117,14 +176,7 @@ body {
 
 @media (prefers-reduced-transparency: reduce) {
   .liquid-glass,
-  .glass-pill {
-    background: rgba(0, 0, 0, 0.82);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
-}
-
-@media (prefers-contrast: more) {
+  @media (prefers-contrast: more) {
   .liquid-glass {
     border: 1px solid #fff;
   }

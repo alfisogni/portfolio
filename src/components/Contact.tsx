@@ -4,8 +4,6 @@ import { contact } from "../content.ts"
 import { sendContactForm } from "../email.ts"
 import { useLocale } from "../locale.tsx"
 
-const heading = { fontFamily: "'Instrument Serif', serif" }
-
 type Status = "idle" | "sending" | "sent" | "error"
 
 export function Contact() {
@@ -27,26 +25,21 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="px-4 py-8 pb-16 md:px-6">
-      <div className="liquid-glass mx-auto max-w-5xl rounded-[32px] px-6 py-14 md:px-12 md:py-16">
-        <h2
-          className="text-4xl leading-none font-medium tracking-[-0.02em] text-white md:text-5xl"
-          style={heading}
-        >
-          {text.title}
-        </h2>
+    <section id="contact" className="px-4 py-section pb-16 md:px-6 md:py-section-lg md:pb-20">
+      <div className="card-2 mx-auto max-w-5xl px-6 py-14 md:px-12 md:py-16">
+        <h2 className="font-display text-heading font-medium text-text">{text.title}</h2>
         <div className="mt-10 grid gap-12 md:grid-cols-2 md:items-start">
           <div>
-            <p className="max-w-md text-[15px] leading-relaxed text-white/78">{text.intro}</p>
+            <p className="max-w-md text-body text-muted">{text.intro}</p>
             <ul className="mt-8 space-y-1 text-sm">
               <li>
-                <a href={`mailto:${contact.email}`} className="pressable flex min-h-11 items-center gap-3 text-white/85 hover:text-white">
+                <a href={`mailto:${contact.email}`} className="pressable flex min-h-11 items-center gap-3 text-white/85 hover:text-text">
                   <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
                   {contact.email}
                 </a>
               </li>
               <li>
-                <a href={contact.phoneHref} className="pressable flex min-h-11 items-center gap-3 text-white/85 hover:text-white">
+                <a href={contact.phoneHref} className="pressable flex min-h-11 items-center gap-3 text-white/85 hover:text-text">
                   <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
                   {contact.phone}
                 </a>
@@ -57,16 +50,16 @@ export function Contact() {
               </li>
             </ul>
             <div className="mt-6 flex gap-4 text-sm font-medium">
-              <a href={contact.linkedin} target="_blank" rel="noreferrer" className="pressable inline-flex h-11 min-w-11 items-center text-white/80 hover:text-white">
+              <a href={contact.linkedin} target="_blank" rel="noreferrer" className="pressable inline-flex h-11 min-w-11 items-center text-muted hover:text-text">
                 LinkedIn
               </a>
-              <a href={contact.github} target="_blank" rel="noreferrer" className="pressable inline-flex h-11 min-w-11 items-center text-white/80 hover:text-white">
+              <a href={contact.github} target="_blank" rel="noreferrer" className="pressable inline-flex h-11 min-w-11 items-center text-muted hover:text-text">
                 GitHub
               </a>
             </div>
           </div>
           <form onSubmit={handleSubmit} className="relative z-10 flex flex-col gap-4">
-            <label className="flex flex-col gap-2 text-sm text-white/80">
+            <label className="flex flex-col gap-2 text-sm text-muted">
               {text.nameLabel}
               <input
                 name="from_name"
@@ -75,10 +68,10 @@ export function Contact() {
                 autoComplete="name"
                 placeholder={text.namePlaceholder}
                 disabled={status === "sending"}
-                className="h-11 rounded-2xl border border-white/20 bg-black/35 px-4 text-base text-white placeholder:text-white/60"
+                className="h-11 rounded-2xl border border-white/20 bg-black/35 px-4 text-base text-text placeholder:text-white/60"
               />
             </label>
-            <label className="flex flex-col gap-2 text-sm text-white/80">
+            <label className="flex flex-col gap-2 text-sm text-muted">
               {text.emailLabel}
               <input
                 name="from_email"
@@ -87,10 +80,10 @@ export function Contact() {
                 autoComplete="email"
                 placeholder={text.emailPlaceholder}
                 disabled={status === "sending"}
-                className="h-11 rounded-2xl border border-white/20 bg-black/35 px-4 text-base text-white placeholder:text-white/60"
+                className="h-11 rounded-2xl border border-white/20 bg-black/35 px-4 text-base text-text placeholder:text-white/60"
               />
             </label>
-            <label className="flex flex-col gap-2 text-sm text-white/80">
+            <label className="flex flex-col gap-2 text-sm text-muted">
               {text.messageLabel}
               <textarea
                 name="message"
@@ -98,7 +91,7 @@ export function Contact() {
                 rows={5}
                 placeholder={text.messagePlaceholder}
                 disabled={status === "sending"}
-                className="rounded-2xl border border-white/20 bg-black/35 px-4 py-3 text-base text-white placeholder:text-white/60"
+                className="rounded-2xl border border-white/20 bg-black/35 px-4 py-3 text-base text-text placeholder:text-white/60"
               />
             </label>
             <button
@@ -111,9 +104,9 @@ export function Contact() {
             <p className="sr-only" aria-live="polite">
               {status === "sent" ? text.success : status === "sending" ? text.sending : ""}
             </p>
-            {status === "sent" ? <p className="text-sm text-white/80">{text.success}</p> : null}
+            {status === "sent" ? <p className="text-sm text-muted">{text.success}</p> : null}
             {status === "error" ? (
-              <p className="text-sm text-white/80" role="alert">
+              <p className="text-sm text-muted" role="alert">
                 {text.error}{" "}
                 <a className="underline" href={`mailto:${contact.email}`}>
                   {contact.email}
@@ -123,7 +116,7 @@ export function Contact() {
           </form>
         </div>
       </div>
-      <p className="mx-auto mt-10 max-w-5xl px-2 text-xs text-white/65">
+      <p className="mx-auto mt-10 max-w-5xl px-2 text-xs text-faint">
         © {new Date().getFullYear()} Luca Alejandro Fisogni
       </p>
     </section>

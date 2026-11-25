@@ -8,6 +8,9 @@ Entry. Follow the id.
 - id: veil
   file: src/index.css (.bg-veil), src/components/BackgroundVideo.tsx
   depends: [video]
+- id: tokens
+  file: src/index.css (@theme), .ai/tokens.md
+  depends: []
 - id: glass
   file: src/index.css
   depends: [video]
@@ -26,5 +29,6 @@ Entry. Follow the id.
 - write -> phrase: the bar and the hero open one field
 - locale -> phrase: the lines follow ES | EN
 
+- tokens -> glass: card-1 and card-2 read color, radius and space from the theme
 - veil -> glass: the veil sits under the blur, so the block stays calm over bright smoke
 - glass rejects: sampling the frame, flipping the ink

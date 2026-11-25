@@ -13,7 +13,7 @@ export default function App() {
     <LocaleProvider>
       <WriteProvider>
       <VideoProvider>
-      <div className="h-dvh overflow-hidden bg-black text-white selection:bg-white selection:text-black">
+      <div className="h-dvh overflow-hidden bg-ink text-text selection:bg-white selection:text-black">
         <BackgroundVideo />
         <LocaleFade>
           <div className="relative z-10 flex h-dvh flex-col">

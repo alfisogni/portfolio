@@ -14,6 +14,9 @@ Entry. Follow the id.
 - id: scroll
   file: src/smooth.ts, src/reveal.tsx
   depends: []
+- id: work
+  file: src/components/Work.tsx, src/content.ts (work.featured)
+  depends: [tokens, scroll]
 - id: glass
   file: src/index.css
   depends: [video]

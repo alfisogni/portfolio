@@ -25,3 +25,5 @@ One line. The id points at graph.md.
 - locale: ES | EN, stored in localStorage. “IA Prompts” in ES, “AI Prompts” in EN (about.aiPrompts)
 - phrase: the bar name is “Luca Fisogni”. The photo is only in Sobre mí
 - video: four projects stay, ClipFlow, Mystic, Thot, Minerva
+- work: Thot is the case study, one wide card-1. The other three are compact card-2 in a 3-column grid. The lead is picked by name (work.featured.name), not by position. The big wrapper card is gone, so no glass sits inside glass
+- work: Problema, Decisión and Resultado for Thot are null in content.ts until Luca writes them. A null renders a dashed accent marker “[Pendiente: texto de Luca]”. Never fill them in. Do not deploy while any [data-placeholder] shows

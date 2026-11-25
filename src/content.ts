@@ -93,6 +93,22 @@ type Copy = {
     title: string
     demo: string
     projects: { description: string; tags: string[] }[]
+    /**
+     * Caso de estudio del proyecto destacado. Cada campo es texto de Luca o null.
+     * null muestra un marcador visible en la página; nunca se rellena con texto inventado.
+     */
+    featured: {
+      name: string
+      label: string
+      problemLabel: string
+      decisionLabel: string
+      resultLabel: string
+      stackLabel: string
+      missing: string
+      problem: string | null
+      decision: string | null
+      result: string | null
+    }
   }
   contactSection: {
     title: string
@@ -184,6 +200,18 @@ export const copy: Record<Locale, Copy> = {
           tags: ["React", "TypeScript", "Ant Design", "Integración con IA", "Automatización de documentos"],
         },
       ],
+    featured: {
+      name: "Thot",
+      label: "Caso destacado",
+      problemLabel: "Problema",
+      decisionLabel: "Decisión de diseño y arquitectura",
+      resultLabel: "Resultado",
+      stackLabel: "Stack",
+      missing: "Pendiente: texto de Luca",
+      problem: null,
+      decision: null,
+      result: null,
+    },
     },
     contactSection: {
       title: "Contacto",
@@ -273,6 +301,18 @@ export const copy: Record<Locale, Copy> = {
           tags: ["React", "TypeScript", "Ant Design", "AI Integration", "Document automation"],
         },
       ],
+    featured: {
+      name: "Thot",
+      label: "Featured case",
+      problemLabel: "Problem",
+      decisionLabel: "Design and architecture decision",
+      resultLabel: "Result",
+      stackLabel: "Stack",
+      missing: "Pending: text from Luca",
+      problem: null,
+      decision: null,
+      result: null,
+    },
     },
     contactSection: {
       title: "Contact",

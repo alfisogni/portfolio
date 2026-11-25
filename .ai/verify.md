@@ -25,3 +25,5 @@ http://127.0.0.1:5179/ at 390 and at 1024.
 - After a jump to #contact no [data-reveal] stays pending
 - Reduced motion (emulated): .page-scroll has no lenis class, pending count is 0
 - Do not run a regex over index.css that spans blocks. It once ate the reduced-transparency block. Run npm run build after any CSS edit
+- Work: one wide card, three compact cards at 1024; all stack at 375 with no overflow
+- Before any deploy: document.querySelectorAll('[data-placeholder]').length must be 0

@@ -1,6 +1,7 @@
 import { portrait, technologies } from "../content.ts"
 import { useLocale } from "../locale.tsx"
 import { Reveal } from "../reveal.tsx"
+import { TechRing } from "./TechRing.tsx"
 
 export function About() {
   const { copy } = useLocale()
@@ -42,18 +43,21 @@ export function About() {
         </Reveal>
 
         {/* Tecnologías a ancho completo: etiqueta a la izquierda, chips a la derecha. */}
-        <Reveal as="article" delay={0} className="card-2 p-card md:col-span-12 md:p-card-lg">
-          <div className="grid gap-5 md:grid-cols-[12rem_1fr] md:gap-10">
+        {/* Sin tarjeta: el anillo vive directamente sobre el fondo. */}
+        <Reveal as="div" delay={0} className="md:col-span-12">
+          <div className="flex items-baseline justify-between gap-4 px-2">
             <h3 className="text-sm font-medium tracking-[0.16em] text-faint uppercase">
               {copy.about.technologies}
             </h3>
-            <ul className="flex flex-wrap gap-2">
-              {technologies.map((name) => (
-                <li key={name} className="chip px-3 py-1.5 text-sm text-text/85">
-                  {name === "{ai}" ? copy.about.aiPrompts : name}
-                </li>
-              ))}
-            </ul>
+            <p className="text-xs text-faint">{copy.about.techHint}</p>
+          </div>
+          <div className="mt-2">
+            <TechRing
+              items={technologies.map((name) => ({
+                key: name === "{ai}" ? "ai" : name,
+                label: name === "{ai}" ? copy.about.aiPrompts : name,
+              }))}
+            />
           </div>
         </Reveal>
       </div>

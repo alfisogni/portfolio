@@ -29,3 +29,4 @@ http://127.0.0.1:5179/ at 390 and at 1024.
 - Page text must not match /sinaptic|enarsa|sisifo|sísifo|beccar|andes|hábitat/i (client and employer names stay out)
 - Every link and button is 44x44 or more at 375 and at 1440
 - Before any deploy: document.querySelectorAll('[data-placeholder]').length must be 0
+- Technologies: at 1440 and 375 the ring renders with 15 tiles and 15 mirrored backs, overflow 0. With reduced motion there is no .tech-stage, 15 flat tiles. Build must not bundle unused simple-icons

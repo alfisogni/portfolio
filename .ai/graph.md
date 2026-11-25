@@ -14,6 +14,9 @@ Entry. Follow the id.
 - id: scroll
   file: src/smooth.ts, src/reveal.tsx
   depends: []
+- id: tech
+  file: src/components/TechRing.tsx, src/icons/sharepoint.ts, src/index.css (.tech-*)
+  depends: [tokens]
 - id: work
   file: src/components/Work.tsx, src/content.ts (work.featured)
   depends: [tokens, scroll]

@@ -89,6 +89,7 @@ type Copy = {
     experience: { title: string; detail: string }[]
     technologies: string
     aiPrompts: string
+    techHint: string
   }
   work: {
     title: string
@@ -180,6 +181,7 @@ export const copy: Record<Locale, Copy> = {
       ],
       technologies: "Tecnologías",
       aiPrompts: "IA Prompts",
+      techHint: "Arrastrá para girar",
     },
     work: {
       title: "Proyectos",
@@ -290,6 +292,7 @@ export const copy: Record<Locale, Copy> = {
       ],
       technologies: "Technologies",
       aiPrompts: "AI Prompts",
+      techHint: "Drag to rotate",
     },
     work: {
       title: "Projects",

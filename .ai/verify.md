@@ -10,3 +10,6 @@ http://127.0.0.1:5179/ at 390 and at 1024.
 - The bar has no code icon
 - .liquid-glass backdrop-filter blur is 12px at 390 and at 1024
 - Text inside a block keeps the white glow
+- Video, 1440 wide: currentSrc is bg.webm, about 516 KB. At 375: bg-mobile.mp4, about 290 KB, preload metadata
+- Video, reduced motion (emulate prefers-reduced-motion: reduce): paused is true, readyState is 0, only the poster is fetched, the button reads play
+- Pause toggles paused and the button label both ways

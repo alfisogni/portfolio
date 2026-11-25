@@ -15,6 +15,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* El poster también vive como fondo del contenedor: nunca hay negro puro antes de cargar. */
+.bg-poster {
+  background-color: #050408;
+  background-size: cover;
+  background-position: center;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);

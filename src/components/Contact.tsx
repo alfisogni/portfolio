@@ -38,29 +38,29 @@ export function Contact() {
         <div className="mt-10 grid gap-12 md:grid-cols-2 md:items-start">
           <div>
             <p className="max-w-md text-[15px] leading-relaxed text-white/78">{text.intro}</p>
-            <ul className="mt-8 space-y-5 text-sm">
+            <ul className="mt-8 space-y-1 text-sm">
               <li>
-                <a href={`mailto:${contact.email}`} className="pressable flex items-center gap-3 text-white/85 hover:text-white">
+                <a href={`mailto:${contact.email}`} className="pressable flex min-h-11 items-center gap-3 text-white/85 hover:text-white">
                   <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
                   {contact.email}
                 </a>
               </li>
               <li>
-                <a href={contact.phoneHref} className="pressable flex items-center gap-3 text-white/85 hover:text-white">
+                <a href={contact.phoneHref} className="pressable flex min-h-11 items-center gap-3 text-white/85 hover:text-white">
                   <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
                   {contact.phone}
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-white/85">
+              <li className="flex min-h-11 items-center gap-3 text-white/85">
                 <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
                 {contact.location}
               </li>
             </ul>
-            <div className="mt-8 flex gap-6 text-sm font-medium">
-              <a href={contact.linkedin} target="_blank" rel="noreferrer" className="pressable text-white/80 hover:text-white">
+            <div className="mt-6 flex gap-4 text-sm font-medium">
+              <a href={contact.linkedin} target="_blank" rel="noreferrer" className="pressable inline-flex h-11 min-w-11 items-center text-white/80 hover:text-white">
                 LinkedIn
               </a>
-              <a href={contact.github} target="_blank" rel="noreferrer" className="pressable text-white/80 hover:text-white">
+              <a href={contact.github} target="_blank" rel="noreferrer" className="pressable inline-flex h-11 min-w-11 items-center text-white/80 hover:text-white">
                 GitHub
               </a>
             </div>

@@ -64,6 +64,9 @@ type Copy = {
     resume: string
     talk: string
     language: string
+    menu: string
+    closeMenu: string
+    menuLabel: string
   }
   hero: {
     lines: readonly string[]
@@ -120,6 +123,9 @@ export const copy: Record<Locale, Copy> = {
       resume: "CV",
       talk: "Dejá tu email",
       language: "Idioma",
+      menu: "Abrir menú",
+      closeMenu: "Cerrar menú",
+      menuLabel: "Navegación principal",
     },
     hero: {
       lines: ["Diseñando y construyendo", "experiencias digitales."],
@@ -203,6 +209,9 @@ export const copy: Record<Locale, Copy> = {
       resume: "Résumé",
       talk: "Get in touch",
       language: "Language",
+      menu: "Open menu",
+      closeMenu: "Close menu",
+      menuLabel: "Main navigation",
     },
     hero: {
       lines: ["Designing and building", "digital experiences."],

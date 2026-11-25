@@ -1,5 +1,6 @@
-import { Pause, Play } from "lucide-react"
-import { motion, useReducedMotion } from "motion/react"
+import { Menu, Pause, Play, X } from "lucide-react"
+import { AnimatePresence, motion, useReducedMotion } from "motion/react"
+import { useEffect, useRef, useState } from "react"
 import { cvHref, type Locale } from "../content.ts"
 import { useLocale } from "../locale.tsx"
 import { useVideo } from "../video.tsx"
@@ -12,96 +13,168 @@ export function Navbar() {
   const { openWrite } = useWrite()
   const { paused, toggle } = useVideo()
   const reduced = useReducedMotion()
+  const [open, setOpen] = useState(false)
+  const menuButton = useRef<HTMLButtonElement>(null)
+  const panel = useRef<HTMLDivElement>(null)
   const links = [
     { href: "#work", label: copy.nav.work },
     { href: "#about", label: copy.nav.about },
     { href: "#contact", label: copy.nav.contact },
   ]
 
+  const close = (returnFocus: boolean) => {
+    setOpen(false)
+    if (returnFocus) menuButton.current?.focus()
+  }
+
+  // Foco al primer link al abrir. Escape y clic afuera cierran; el foco vuelve al botón con Escape.
+  useEffect(() => {
+    if (!open) return
+    panel.current?.querySelector<HTMLElement>("a")?.focus()
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false)
+        menuButton.current?.focus()
+      }
+    }
+    const onPointer = (event: PointerEvent) => {
+      const target = event.target as Node
+      if (!panel.current?.contains(target) && !menuButton.current?.contains(target)) setOpen(false)
+    }
+    // Si la ventana pasa a escritorio, el panel no tiene sentido.
+    const wide = window.matchMedia("(min-width: 768px)")
+    const onWide = () => wide.matches && setOpen(false)
+    document.addEventListener("keydown", onKey)
+    document.addEventListener("pointerdown", onPointer)
+    wide.addEventListener("change", onWide)
+    return () => {
+      document.removeEventListener("keydown", onKey)
+      document.removeEventListener("pointerdown", onPointer)
+      wide.removeEventListener("change", onWide)
+    }
+  }, [open])
+
   return (
     <motion.nav
-      className="relative z-30 w-full shrink-0 px-4 py-4 md:px-6 md:py-6"
+      aria-label={copy.nav.menuLabel}
+      className="relative z-30 w-full shrink-0 px-3 py-1.5 md:px-6 md:py-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: reduced ? 0.2 : 0.45, ease: "easeOut" }}
     >
-      <div className="liquid-glass mx-auto flex max-w-5xl flex-col gap-1 rounded-3xl px-4 py-2 md:flex-row md:items-center md:justify-between md:gap-3 md:rounded-full md:px-6">
-        <div className="flex min-w-0 items-center justify-between gap-3 md:contents">
-          <div className="flex min-w-0 items-center gap-6 md:gap-8">
-            <a href="#top" className="pressable flex items-center gap-2">
-              <span className="text-base font-semibold whitespace-nowrap text-white md:text-lg">
-                Luca Fisogni
-              </span>
-            </a>
-            <div className="hidden items-center gap-8 text-sm font-medium text-white/80 md:flex">
-              {links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="pressable transition-colors duration-300 hover:text-white"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className="flex shrink-0 items-center gap-2 md:gap-3">
-            <div
-              role="group"
-              aria-label={copy.nav.language}
-              className="flex items-center rounded-full bg-black/55"
-            >
-              {locales.map((code) => (
-                <button
-                  key={code}
-                  type="button"
-                  aria-pressed={locale === code}
-                  onClick={() => setLocale(code)}
-                  className={`pressable h-11 min-w-11 rounded-full px-2 text-xs font-semibold tracking-wide ${
-                    locale === code ? "bg-white text-black" : "text-white"
-                  }`}
-                >
-                  {code.toUpperCase()}
-                </button>
-              ))}
-            </div>
-            <button
-              type="button"
-              onClick={toggle}
-              aria-pressed={paused}
-              aria-label={paused ? copy.video.play : copy.video.pause}
-              className="pressable inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-white"
-            >
-              {paused ? <Play className="h-4 w-4" aria-hidden="true" /> : <Pause className="h-4 w-4" aria-hidden="true" />}
-            </button>
-            <a
-              href={cvHref}
-              download="Luca_Fisogni_CV.pdf"
-              className="pressable inline-flex h-11 items-center px-1 text-sm font-medium whitespace-nowrap text-white transition-colors hover:text-white/80"
-            >
-              {copy.nav.resume}
-            </a>
-            <button
-              type="button"
-              onClick={openWrite}
-              className="pressable hidden h-11 items-center rounded-full bg-black/55 px-4 text-sm font-medium whitespace-nowrap text-white md:inline-flex"
-            >
-              {copy.hero.cta}
-            </button>
+      <div className="liquid-glass mx-auto flex max-w-5xl items-center justify-between gap-2 rounded-full px-2 py-0.5 md:gap-3 md:px-6 md:py-2">
+        <div className="flex min-w-0 items-center gap-6 md:gap-8">
+          <a href="#top" className="pressable inline-flex h-11 min-w-11 items-center pl-2 md:pl-0">
+            <span className="text-base font-semibold whitespace-nowrap text-white md:text-lg">Luca Fisogni</span>
+          </a>
+          <div className="hidden items-center gap-8 text-sm font-medium text-white/80 md:flex">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="pressable transition-colors duration-300 hover:text-white"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
-        <div className="flex items-center justify-center gap-6 text-sm font-medium text-white/80 md:hidden">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="pressable inline-flex h-11 items-center transition-colors duration-300 hover:text-white"
-            >
-              {link.label}
-            </a>
-          ))}
+        <div className="flex shrink-0 items-center gap-1 md:gap-3">
+          <div
+            role="group"
+            aria-label={copy.nav.language}
+            className="flex items-center rounded-full bg-black/55"
+          >
+            {locales.map((code) => (
+              <button
+                key={code}
+                type="button"
+                aria-pressed={locale === code}
+                onClick={() => setLocale(code)}
+                className={`pressable h-11 min-w-11 rounded-full px-2 text-xs font-semibold tracking-wide ${
+                  locale === code ? "bg-white text-black" : "text-white"
+                }`}
+              >
+                {code.toUpperCase()}
+              </button>
+            ))}
+          </div>
+          <button
+            type="button"
+            onClick={toggle}
+            aria-pressed={paused}
+            aria-label={paused ? copy.video.play : copy.video.pause}
+            className="pressable inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-white"
+          >
+            {paused ? <Play className="h-4 w-4" aria-hidden="true" /> : <Pause className="h-4 w-4" aria-hidden="true" />}
+          </button>
+          <a
+            href={cvHref}
+            download="Luca_Fisogni_CV.pdf"
+            className="pressable hidden h-11 items-center px-1 text-sm font-medium whitespace-nowrap text-white transition-colors hover:text-white/80 md:inline-flex"
+          >
+            {copy.nav.resume}
+          </a>
+          <button
+            type="button"
+            onClick={openWrite}
+            className="pressable hidden h-11 items-center rounded-full bg-black/55 px-4 text-sm font-medium whitespace-nowrap text-white md:inline-flex"
+          >
+            {copy.hero.cta}
+          </button>
+          <button
+            ref={menuButton}
+            type="button"
+            onClick={() => setOpen((value) => !value)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? copy.nav.closeMenu : copy.nav.menu}
+            className="pressable inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-white md:hidden"
+          >
+            {open ? <X className="h-4 w-4" aria-hidden="true" /> : <Menu className="h-4 w-4" aria-hidden="true" />}
+          </button>
         </div>
       </div>
+
+      <AnimatePresence>
+        {open ? (
+          <motion.div
+            ref={panel}
+            id="mobile-menu"
+            className="absolute inset-x-3 top-full z-40 mt-1 md:hidden"
+            initial={reduced ? { opacity: 0 } : { opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={reduced ? { opacity: 0 } : { opacity: 0, y: -8 }}
+            transition={{ duration: reduced ? 0.15 : 0.22, ease: "easeOut" }}
+          >
+            <div className="liquid-glass rounded-3xl p-2">
+            <ul className="flex flex-col text-base font-medium text-white">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={() => close(false)}
+                    className="pressable flex h-12 items-center rounded-2xl px-4 transition-colors hover:bg-white/10"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href={cvHref}
+                  download="Luca_Fisogni_CV.pdf"
+                  onClick={() => close(false)}
+                  className="pressable flex h-12 items-center rounded-2xl px-4 transition-colors hover:bg-white/10"
+                >
+                  {copy.nav.resume}
+                </a>
+              </li>
+            </ul>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </motion.nav>
   )
 }

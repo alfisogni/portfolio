@@ -15,3 +15,5 @@ http://127.0.0.1:5179/ at 390 and at 1024.
 - Pause toggles paused and the button label both ways
 - Contrast: no text under 4.5:1. Re-measure after any change to veil, glass fill or text opacity (frames at 1 fps, worst 0.1% of pixels)
 - .liquid-glass fill is rgba(10,8,18,.55) and blur is 12px at 390 and at 1024
+- At 375: the nav is under 64px, no link or button under 44x44, overflow 0
+- Menu: opens with focus on the first link, Escape closes and focuses the button, a link closes it, widening to 768 closes it

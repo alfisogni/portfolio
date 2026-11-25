@@ -12,6 +12,8 @@ One line. The id points at graph.md.
 - write: the bar and “Dejá tu email” / “Get in touch” open the hero field. Contact keeps the full form
 - write: Cancelar / Cancel is 44px and sends nothing. Escape does the same
 - write: EmailJS notifies Luca. No PDF until the brand files arrive
+- nav: below 768px the bar is one row, 60px: name, ES | EN, pause, menu. The panel holds Trabajo, Sobre mí, Contacto, CV. It closes on a link, on Escape (focus returns to the button) and on a tap outside. It breaks at 768, not 640, so no width keeps the old two-row bar
+- touch: every tap target is 44px or more, including the name, “Ver proyectos” and the contact links
 - locale: ES | EN, stored in localStorage
 - phrase: the bar name is “Luca Fisogni”. The photo is only in Sobre mí
 - video: four projects stay, ClipFlow, Mystic, Thot, Minerva

@@ -198,7 +198,7 @@ export function Hero() {
           >
             <a
               href="#work"
-              className="pressable text-[13px] font-medium tracking-wide text-white/80 transition-colors duration-300 hover:text-white"
+              className="pressable inline-flex h-11 min-w-11 items-center text-[13px] font-medium tracking-wide text-white/80 transition-colors duration-300 hover:text-white"
             >
               {copy.hero.work}
             </a>

@@ -3,6 +3,7 @@ import { useId, useState, type FormEvent } from "react"
 import { contact } from "../content.ts"
 import { sendContactForm } from "../email.ts"
 import { useLocale } from "../locale.tsx"
+import { Reveal } from "../reveal.tsx"
 
 type Status = "idle" | "sending" | "sent" | "error"
 type ErrorKind = "offline" | "limit" | "server"
@@ -39,7 +40,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="px-4 py-section pb-16 md:px-6 md:py-section-lg md:pb-20">
-      <div className="card-2 mx-auto max-w-5xl px-6 py-14 md:px-12 md:py-16">
+      <Reveal className="card-2 mx-auto max-w-5xl px-6 py-14 md:px-12 md:py-16">
         <h2 className="font-display text-heading font-medium text-text">{text.title}</h2>
         <div className="mt-10 grid gap-12 md:grid-cols-2 md:items-start">
           <div>
@@ -133,7 +134,7 @@ export function Contact() {
             ) : null}
           </form>
         </div>
-      </div>
+      </Reveal>
       <p className="mx-auto mt-10 max-w-5xl px-2 text-xs text-faint">
         © {new Date().getFullYear()} Luca Alejandro Fisogni
       </p>

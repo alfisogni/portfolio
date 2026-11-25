@@ -1,3 +1,5 @@
+import { useRef } from "react"
+import { useSmoothScroll } from "./smooth.ts"
 import { About } from "./components/About.tsx"
 import { BackgroundVideo } from "./components/BackgroundVideo.tsx"
 import { Contact } from "./components/Contact.tsx"
@@ -9,6 +11,9 @@ import { VideoProvider } from "./video.tsx"
 import { WriteProvider } from "./write.tsx"
 
 export default function App() {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  useSmoothScroll(scrollRef)
+
   return (
     <LocaleProvider>
       <WriteProvider>
@@ -18,7 +23,7 @@ export default function App() {
         <LocaleFade>
           <div className="relative z-10 flex h-dvh flex-col">
             <Navbar />
-            <div className="page-scroll min-h-0 flex-1 overflow-y-auto overscroll-contain scroll-smooth">
+            <div ref={scrollRef} className="page-scroll min-h-0 flex-1 overflow-y-auto overscroll-contain">
               <section className="flex min-h-full flex-col">
                 <Hero />
               </section>

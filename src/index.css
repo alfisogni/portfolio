@@ -102,6 +102,40 @@ body {
   border-radius: var(--radius-card-2);
 }
 
+/* Entrada por sección (ver reveal.tsx). Solo transform y opacity. */
+[data-reveal] {
+  transition:
+    opacity 500ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
+}
+
+[data-reveal="pending"] {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+}
+
+[data-reveal="done"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reglas recomendadas por Lenis: su scroll no debe pelear con scroll-behavior. */
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    transition: none;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* Chip: etiqueta de tecnología. Sin blur propio, ya vive dentro de una tarjeta con blur. */
 .chip {
   background: rgb(255 255 255 / 0.07);
@@ -176,10 +210,18 @@ body {
 
 @media (prefers-reduced-transparency: reduce) {
   .liquid-glass,
-  @media (prefers-contrast: more) {
-  .liquid-glass {
-    border: 1px solid #fff;
+  .card-1,
+  .card-2 {
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 
-
+@media (prefers-contrast: more) {
+  .liquid-glass,
+  .card-1,
+  .card-2 {
+    border: 1px solid #fff;
+  }
+}

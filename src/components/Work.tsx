@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react"
 import { projectMedia } from "../content.ts"
 import { useLocale } from "../locale.tsx"
+import { Reveal } from "../reveal.tsx"
 
 export function Work() {
   const { copy } = useLocale()
@@ -13,7 +14,7 @@ export function Work() {
           {projectMedia.map((project, index) => {
             const text = copy.work.projects[index]
             return (
-              <article key={project.name} className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+              <Reveal as="article" key={project.name} className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
                 <a href={project.href} target="_blank" rel="noreferrer" className="pressable block overflow-hidden rounded-media">
                   <img
                     src={project.image}
@@ -41,7 +42,7 @@ export function Work() {
                     <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </div>
-              </article>
+              </Reveal>
             )
           })}
         </div>

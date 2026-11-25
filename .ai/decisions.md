@@ -19,6 +19,9 @@ One line. The id points at graph.md.
 - touch: every tap target is 44px or more, including the name, “Ver proyectos” and the contact links
 - contact form: three errors, each says what happened and what to do (offline, rate limit 429, service down). The message stays in the form on error. Fields have id and a label bound with htmlFor
 - contact form: the form is read before the await. React nulls event.currentTarget after it, which used to show an error on a mail that had gone out
+- scroll: Lenis 1.3.27 (exact), one instance on .page-scroll, not window. No GSAP, so one clock (autoRaf). 1.3.28 was 2 days old, so it waits. Off under reduced motion, also if the setting flips while open. Anchors go through lenis.scrollTo from one document listener, because the bar sits outside the scroller
+- scroll: any future inner scroller needs data-lenis-prevent. None exists today
+- reveal: opacity + 16px, 500ms, transform and opacity only. Only what starts below the fold is hidden, and it shows as it nears the view or once the person scrolls past it. Reduced motion hides nothing. The old observer fade on the portrait is gone
 - locale: ES | EN, stored in localStorage. “IA Prompts” in ES, “AI Prompts” in EN (about.aiPrompts)
 - phrase: the bar name is “Luca Fisogni”. The photo is only in Sobre mí
 - video: four projects stay, ClipFlow, Mystic, Thot, Minerva

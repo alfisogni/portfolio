@@ -21,7 +21,7 @@ import { sharepointPath } from "../icons/sharepoint.ts"
  * Anillo 3D de tecnologías.
  * Geometría: CSS 3D (perspective + preserve-3d). Movimiento: Motion, un solo valor `angle`
  * del que salen la rotación y la profundidad de cada tarjeta, solo con transform y opacity.
- * Se puede arrastrar (con inercia), se frena al pasar el mouse y se pausa fuera de pantalla.
+ * Se puede arrastrar (con inercia). Pasar el mouse no lo frena: solo se detiene mientras se lo sostiene con el click. Se pausa fuera de pantalla.
  * Con movimiento reducido no hay anillo: se muestra una grilla plana con las mismas tarjetas.
  * Accesibilidad: es una lista real (<ul>) con el nombre de cada tecnología como texto.
  */
@@ -98,9 +98,7 @@ export function TechRing({ items }: { items: TechItem[] }) {
   const angle = useMotionValue(0)
   const stage = useRef<HTMLDivElement>(null)
   const visible = useRef(true)
-  const hovering = useRef(false)
   const dragging = useRef(false)
-  const speed = useRef(1)
   const velocity = useRef(0)
   const last = useRef({ x: 0, t: 0 })
   const step = 360 / items.length
@@ -119,10 +117,8 @@ export function TechRing({ items }: { items: TechItem[] }) {
   useAnimationFrame((_, delta) => {
     if (reduced || !visible.current || dragging.current) return
     const d = Math.min(delta, 50)
-    // Al pasar el mouse el giro se frena con suavidad en vez de cortarse.
-    speed.current += ((hovering.current ? 0 : 1) - speed.current) * Math.min(1, d / 250)
     velocity.current *= Math.pow(0.94, d / 16.7)
-    angle.set(angle.get() + (BASE_SPEED * speed.current + velocity.current) * d)
+    angle.set(angle.get() + (BASE_SPEED + velocity.current) * d)
   })
 
   if (reduced) {
@@ -142,12 +138,6 @@ export function TechRing({ items }: { items: TechItem[] }) {
       ref={stage}
       className="tech-stage"
       style={{ "--tech-n": items.length } as React.CSSProperties}
-      onPointerEnter={(event) => {
-        if (event.pointerType === "mouse") hovering.current = true
-      }}
-      onPointerLeave={() => {
-        hovering.current = false
-      }}
       onPointerDown={(event) => {
         dragging.current = true
         velocity.current = 0

@@ -218,7 +218,8 @@ export const copy: Record<Locale, Copy> = {
         "Un tablero por estado donde cualquier persona del equipo entienda en segundos qué hay que hacer, quién lo tiene y qué está por vencer.",
       decision:
         "SharePoint como única fuente de verdad, sin base de datos propia: el frontend habla directo con SharePoint vía Microsoft Graph, con sesión de Microsoft. Un backend mínimo existe solo para lo que un navegador no puede hacer: recibir webhooks de Azure DevOps y correr los trabajos periódicos de sincronización.",
-      result: null,
+      result:
+        "Más de dos meses en uso por equipos enteros. Trabajo mejor organizado y trackeado, con mejoras de productividad y de orden que el equipo también nota en cómo se siente trabajando. Las devoluciones son positivas y los pedidos que llegan son ajustes menores, como cambios de texto o campos nuevos.",
       tags: ["React", "TypeScript", "Ant Design", "MSAL", "Microsoft Graph", "SharePoint", "Azure DevOps", "Microsoft Planner", "Node.js", "Express"],
     },
     },
@@ -325,7 +326,8 @@ export const copy: Record<Locale, Copy> = {
         "A board by status where anyone on the team understands in seconds what needs doing, who owns it and what is about to be due.",
       decision:
         "SharePoint as the single source of truth, with no database of its own: the frontend talks straight to SharePoint through Microsoft Graph, using a Microsoft sign-in. A minimal backend exists only for what a browser cannot do: receive Azure DevOps webhooks and run the periodic sync jobs.",
-      result: null,
+      result:
+        "In use by whole teams for over two months. Work is better organized and tracked, with gains in productivity and order that the team also feels in how they experience their work. Feedback is positive, and the requests that come in are minor tweaks, such as text changes or new fields.",
       tags: ["React", "TypeScript", "Ant Design", "MSAL", "Microsoft Graph", "SharePoint", "Azure DevOps", "Microsoft Planner", "Node.js", "Express"],
     },
     },

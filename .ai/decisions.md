@@ -41,3 +41,4 @@ One line. The id points at graph.md.
 - tech: radius comes from r = tile * k / (2 * tan(180deg / n)) in CSS, so adding a technology to content.ts resizes the ring on its own
 - tech: hover does not slow the ring. It stops only while the pointer is held down (the drag gesture) and resumes on release. Luca asked for this
 - motion: entrances are slower on Luca's request, to be enjoyed. Hero 1.2s, bar 0.7s, menu 0.32s, section reveal 800ms (stagger 120ms). Responses to touch (hover, press, 100ms) stay fast. Reduced motion keeps its short fades. The old 500ms and 0.8s values are superseded
+- reveal: a block starts its entrance when its top is 22% up from the bottom edge (was 8%) and travels 24px (was 16). At 8% the animation ran at the very edge and was nearly done by the time it was seen. Check by scrolling so a block's top sits at 90% of the viewport (still hidden) then at 70% (revealed)

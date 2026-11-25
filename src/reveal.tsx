@@ -11,7 +11,7 @@ type RevealProps = {
 }
 
 /**
- * Entrada sutil: opacidad + 16 px de desplazamiento, 800 ms, solo transform y opacity.
+ * Entrada sutil: opacidad + 24 px de desplazamiento, 800 ms, solo transform y opacity.
  * Regla: todo es visible en reposo. Lo que ya se ve al cargar nunca se oculta; solo se
  * prepara lo que está por debajo del pliegue, y se muestra apenas se acerca. Con
  * movimiento reducido o sin IntersectionObserver no se toca nada. El estado vive en un
@@ -41,7 +41,7 @@ export function Reveal({ as: Tag = "div", className, delay = 0, children }: Reve
       ([entry]) => {
         if (entry?.isIntersecting) show()
       },
-      { root, rootMargin: "0px 0px -8% 0px" },
+      { root, rootMargin: "0px 0px -22% 0px" },
     )
     // Un salto por ancla puede pasar de largo sin que el observer lo note: lo que quedó
     // por encima de la vista se muestra, así nada queda oculto detrás de la persona.

@@ -110,7 +110,7 @@ body {
 
 [data-reveal="pending"] {
   opacity: 0;
-  transform: translate3d(0, 16px, 0);
+  transform: translate3d(0, 24px, 0);
 }
 
 [data-reveal="done"] {

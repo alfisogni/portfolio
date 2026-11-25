@@ -210,12 +210,12 @@ export const copy: Record<Locale, Copy> = {
       label: "Caso destacado",
       tagline: "Gestor de tareas con sincronización",
       description:
-        "Centraliza en un solo tablero las tareas de Marketing y Desarrollo que antes vivían dispersas en distintas plataformas, y las sincroniza con Azure DevOps y Microsoft Planner en los proyectos que lo necesitan.",
+        "Centraliza en un solo tablero las tareas de Marketing y Desarrollo que antes vivían dispersas en distintas plataformas, y las sincroniza con Azure DevOps y Microsoft Planner en los proyectos que lo necesitan. Incluye a Noah, un asistente de IA que cada mañana arma el plan del día de cada persona: qué tareas conviene empezar y por qué.",
       problemLabel: "Problema",
       decisionLabel: "Decisión de arquitectura",
       resultLabel: "Resultado",
       includesLabel: "Qué incluye",
-      includes: ["Tablero y lista por estado", "Resumen y KPIs por proyecto", "Análisis", "Épicas y tareas hijas", "Registro y estadísticas de horas", "Calendario", "Versión móvil"],
+      includes: ["Tablero y lista por estado", "Resumen y KPIs por proyecto", "Análisis de flujo y pronóstico", "Noah, asistente de IA", "Épicas y tareas hijas", "Registro y estadísticas de horas", "Calendario", "Versión móvil"],
       stackLabel: "Stack",
       missing: "Pendiente: texto de Luca",
       problem:
@@ -320,12 +320,12 @@ export const copy: Record<Locale, Copy> = {
       label: "Featured case",
       tagline: "Task manager with sync",
       description:
-        "Brings the Marketing and Development tasks that used to live scattered across different platforms into a single board, and syncs them with Azure DevOps and Microsoft Planner in the projects that need it.",
+        "Brings the Marketing and Development tasks that used to live scattered across different platforms into a single board, and syncs them with Azure DevOps and Microsoft Planner in the projects that need it. It includes Noah, an AI assistant that every morning builds each person's plan for the day: which tasks to start with and why.",
       problemLabel: "Problem",
       decisionLabel: "Architecture decision",
       resultLabel: "Result",
       includesLabel: "What it includes",
-      includes: ["Board and list by status", "Project summary and KPIs", "Analytics", "Epics and child tasks", "Time tracking and hour stats", "Calendar", "Mobile version"],
+      includes: ["Board and list by status", "Project summary and KPIs", "Flow analytics and forecast", "Noah, AI assistant", "Epics and child tasks", "Time tracking and hour stats", "Calendar", "Mobile version"],
       stackLabel: "Stack",
       missing: "Pending: text from Luca",
       problem:

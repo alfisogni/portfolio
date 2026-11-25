@@ -100,6 +100,8 @@ type Copy = {
     featured: {
       name: string
       label: string
+      tagline: string
+      description: string
       problemLabel: string
       decisionLabel: string
       resultLabel: string
@@ -108,6 +110,7 @@ type Copy = {
       problem: string | null
       decision: string | null
       result: string | null
+      tags: string[]
     }
   }
   contactSection: {
@@ -201,16 +204,22 @@ export const copy: Record<Locale, Copy> = {
         },
       ],
     featured: {
-      name: "Thot",
+      name: "Tántalo",
       label: "Caso destacado",
+      tagline: "Gestor de tareas con sincronización",
+      description:
+        "Tablero operativo de tareas para equipos de Marketing y Desarrollo, con creación rápida desde plantillas y sincronización en dos sentidos con Azure DevOps y Microsoft Planner.",
       problemLabel: "Problema",
-      decisionLabel: "Decisión de diseño y arquitectura",
+      decisionLabel: "Decisión de arquitectura",
       resultLabel: "Resultado",
       stackLabel: "Stack",
       missing: "Pendiente: texto de Luca",
-      problem: null,
-      decision: null,
+      problem:
+        "Un tablero por estado donde cualquier persona del equipo entienda en segundos qué hay que hacer, quién lo tiene y qué está por vencer.",
+      decision:
+        "SharePoint como única fuente de verdad, sin base de datos propia: el frontend habla directo con SharePoint vía Microsoft Graph, con sesión de Microsoft. Un backend mínimo existe solo para lo que un navegador no puede hacer: recibir webhooks de Azure DevOps y correr los trabajos periódicos de sincronización.",
       result: null,
+      tags: ["React", "TypeScript", "Ant Design", "MSAL", "Microsoft Graph", "SharePoint", "Azure DevOps", "Microsoft Planner", "Node.js", "Express"],
     },
     },
     contactSection: {
@@ -302,16 +311,22 @@ export const copy: Record<Locale, Copy> = {
         },
       ],
     featured: {
-      name: "Thot",
+      name: "Tántalo",
       label: "Featured case",
+      tagline: "Task manager with sync",
+      description:
+        "Operational task board for Marketing and Development teams, with quick creation from templates and two-way sync with Azure DevOps and Microsoft Planner.",
       problemLabel: "Problem",
-      decisionLabel: "Design and architecture decision",
+      decisionLabel: "Architecture decision",
       resultLabel: "Result",
       stackLabel: "Stack",
       missing: "Pending: text from Luca",
-      problem: null,
-      decision: null,
+      problem:
+        "A board by status where anyone on the team understands in seconds what needs doing, who owns it and what is about to be due.",
+      decision:
+        "SharePoint as the single source of truth, with no database of its own: the frontend talks straight to SharePoint through Microsoft Graph, using a Microsoft sign-in. A minimal backend exists only for what a browser cannot do: receive Azure DevOps webhooks and run the periodic sync jobs.",
       result: null,
+      tags: ["React", "TypeScript", "Ant Design", "MSAL", "Microsoft Graph", "SharePoint", "Azure DevOps", "Microsoft Planner", "Node.js", "Express"],
     },
     },
     contactSection: {

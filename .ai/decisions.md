@@ -25,8 +25,9 @@ One line. The id points at graph.md.
 - locale: ES | EN, stored in localStorage. “IA Prompts” in ES, “AI Prompts” in EN (about.aiPrompts)
 - phrase: the bar name is “Luca Fisogni”. The photo is only in Sobre mí
 - video: four projects stay, ClipFlow, Mystic, Thot, Minerva
-- work: Thot is the case study, one wide card-1. The other three are compact card-2 in a 3-column grid. The lead is picked by name (work.featured.name), not by position. The big wrapper card is gone, so no glass sits inside glass
-- work: Problema, Decisión and Resultado for Thot are null in content.ts until Luca writes them. A null renders a dashed accent marker “[Pendiente: texto de Luca]”. Never fill them in. Do not deploy while any [data-placeholder] shows
+- work: the featured card is Tántalo, “Gestor de tareas con sincronización”. It stands for real professional work done at a company, so it carries no company name, no client name, no screenshot, no link and no code. The tool name is Luca's own pick. The text comes from the project README (stack read from its package.json files). Luca decided to show it knowing the owner's permission is not asked; the cleaner route stays asking for it
+- work: Thot and the other three own projects are compact card-2 in a 2x2 grid under the featured card
+- work: Tántalo's Resultado is null in content.ts until Luca writes it. A null renders a dashed accent marker “[Pendiente: texto de Luca]”. Never fill it in. Problema and Decisión are drafts from the README and need Luca's OK. Do not deploy while any [data-placeholder] shows
 - images: project shots and the portrait are WebP (1280px and 480px), lazy-loaded. The old PNGs weighed 8.8 MB at load, now 0.5 MB. yo.png stays only because the JSON-LD in index.html points at it
 - fonts: loaded with link tags in index.html, not CSS @import, to cut the request chain
 - lighthouse: scores swing a lot between identical runs (TBT 10 to 2400 ms on the same build, headless with no GPU). Compare weight and median, not one run

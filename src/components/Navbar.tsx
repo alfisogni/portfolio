@@ -72,7 +72,7 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="pressable transition-colors duration-300 hover:text-text"
+                className="pressable inline-flex h-11 items-center transition-colors duration-300 hover:text-text"
               >
                 {link.label}
               </a>
@@ -111,7 +111,7 @@ export function Navbar() {
           <a
             href={cvHref}
             download="Luca_Fisogni_CV.pdf"
-            className="pressable hidden h-11 items-center px-1 text-sm font-medium whitespace-nowrap text-text transition-colors hover:text-muted md:inline-flex"
+            className="pressable hidden h-11 min-w-11 items-center justify-center px-1 text-sm font-medium whitespace-nowrap text-text transition-colors hover:text-muted md:inline-flex"
           >
             {copy.nav.resume}
           </a>

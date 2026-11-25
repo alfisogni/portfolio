@@ -31,3 +31,4 @@ One line. The id points at graph.md.
 - images: project shots and the portrait are WebP (1280px and 480px), lazy-loaded. The old PNGs weighed 8.8 MB at load, now 0.5 MB. yo.png stays only because the JSON-LD in index.html points at it
 - fonts: loaded with link tags in index.html, not CSS @import, to cut the request chain
 - lighthouse: scores swing a lot between identical runs (TBT 10 to 2400 ms on the same build, headless with no GPU). Compare weight and median, not one run
+- work: Tántalo copy is concise and claims only what the repo shows. Result leads with “más de dos meses en uso por equipos enteros”. The card lists what it includes (board and list, project summary and KPIs, analytics, epics and child tasks, hour tracking and stats, calendar, mobile), each checked against the routes and .ai notes of the frontend. Decision text says in first person that Luca took the architecture decisions and learned Azure (identity, Key Vault, Graph, DevOps)

@@ -105,6 +105,8 @@ type Copy = {
       problemLabel: string
       decisionLabel: string
       resultLabel: string
+      includesLabel: string
+      includes: string[]
       stackLabel: string
       missing: string
       problem: string | null
@@ -208,18 +210,20 @@ export const copy: Record<Locale, Copy> = {
       label: "Caso destacado",
       tagline: "Gestor de tareas con sincronización",
       description:
-        "Tablero operativo de tareas para equipos de Marketing y Desarrollo, con creación rápida desde plantillas y sincronización en dos sentidos con Azure DevOps y Microsoft Planner.",
+        "Centraliza en un solo tablero las tareas de Marketing y Desarrollo que antes vivían dispersas en distintas plataformas, y las sincroniza con Azure DevOps y Microsoft Planner en los proyectos que lo necesitan.",
       problemLabel: "Problema",
       decisionLabel: "Decisión de arquitectura",
       resultLabel: "Resultado",
+      includesLabel: "Qué incluye",
+      includes: ["Tablero y lista por estado", "Resumen y KPIs por proyecto", "Análisis", "Épicas y tareas hijas", "Registro y estadísticas de horas", "Calendario", "Versión móvil"],
       stackLabel: "Stack",
       missing: "Pendiente: texto de Luca",
       problem:
-        "Un tablero por estado donde cualquier persona del equipo entienda en segundos qué hay que hacer, quién lo tiene y qué está por vencer.",
+        "Las tareas estaban repartidas en varias plataformas, sin una vista única. El equipo trabajaba con la incertidumbre de no saber con claridad qué había que hacer, quién lo tenía y qué estaba por vencer.",
       decision:
-        "SharePoint como única fuente de verdad, sin base de datos propia: el frontend habla directo con SharePoint vía Microsoft Graph, con sesión de Microsoft. Un backend mínimo existe solo para lo que un navegador no puede hacer: recibir webhooks de Azure DevOps y correr los trabajos periódicos de sincronización.",
+        "Un solo tablero, sincronizado donde hace falta. SharePoint es la única fuente de verdad, sin base de datos propia: el frontend habla directo con Microsoft Graph y un backend mínimo atiende solo los webhooks de Azure DevOps y los trabajos de sincronización. Tomé estas decisiones de arquitectura y aprendí Azure en el camino: identidad, Key Vault, Graph y DevOps.",
       result:
-        "Más de dos meses en uso por equipos enteros. Trabajo mejor organizado y trackeado, con mejoras de productividad y de orden que el equipo también nota en cómo se siente trabajando. Las devoluciones son positivas y los pedidos que llegan son ajustes menores, como cambios de texto o campos nuevos.",
+        "Más de dos meses en uso por equipos enteros. Trabajo más organizado y trackeado, con mejoras de productividad y de orden, y una certeza que el equipo hacía tiempo no tenía. Las devoluciones son positivas y lo que piden son ajustes menores, como textos o campos nuevos.",
       tags: ["React", "TypeScript", "Ant Design", "MSAL", "Microsoft Graph", "SharePoint", "Azure DevOps", "Microsoft Planner", "Node.js", "Express"],
     },
     },
@@ -316,18 +320,20 @@ export const copy: Record<Locale, Copy> = {
       label: "Featured case",
       tagline: "Task manager with sync",
       description:
-        "Operational task board for Marketing and Development teams, with quick creation from templates and two-way sync with Azure DevOps and Microsoft Planner.",
+        "Brings the Marketing and Development tasks that used to live scattered across different platforms into a single board, and syncs them with Azure DevOps and Microsoft Planner in the projects that need it.",
       problemLabel: "Problem",
       decisionLabel: "Architecture decision",
       resultLabel: "Result",
+      includesLabel: "What it includes",
+      includes: ["Board and list by status", "Project summary and KPIs", "Analytics", "Epics and child tasks", "Time tracking and hour stats", "Calendar", "Mobile version"],
       stackLabel: "Stack",
       missing: "Pending: text from Luca",
       problem:
-        "A board by status where anyone on the team understands in seconds what needs doing, who owns it and what is about to be due.",
+        "Tasks were spread across several platforms with no single view. The team worked with the uncertainty of not knowing clearly what had to be done, who owned it and what was about to be due.",
       decision:
-        "SharePoint as the single source of truth, with no database of its own: the frontend talks straight to SharePoint through Microsoft Graph, using a Microsoft sign-in. A minimal backend exists only for what a browser cannot do: receive Azure DevOps webhooks and run the periodic sync jobs.",
+        "One board, synced where it is needed. SharePoint is the single source of truth, with no database of its own: the frontend talks straight to Microsoft Graph, and a minimal backend handles only Azure DevOps webhooks and the sync jobs. I made these architecture decisions and learned Azure along the way: identity, Key Vault, Graph and DevOps.",
       result:
-        "In use by whole teams for over two months. Work is better organized and tracked, with gains in productivity and order that the team also feels in how they experience their work. Feedback is positive, and the requests that come in are minor tweaks, such as text changes or new fields.",
+        "More than two months in use by whole teams. Work is better organized and tracked, with gains in productivity and order, and a certainty the team had lacked for a long time. Feedback is positive, and what they ask for are minor tweaks, such as text or new fields.",
       tags: ["React", "TypeScript", "Ant Design", "MSAL", "Microsoft Graph", "SharePoint", "Azure DevOps", "Microsoft Planner", "Node.js", "Express"],
     },
     },

@@ -31,6 +31,14 @@ export function Work() {
                 <p className="mt-1 text-lg text-text">{featured.tagline}</p>
                 <p className="mt-4 text-body text-muted">{featured.description}</p>
                 <div className="mt-6">
+                  <p className="text-xs font-medium tracking-[0.12em] text-faint uppercase">{featured.includesLabel}</p>
+                  <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted">
+                    {featured.includes.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-6">
                   <p className="text-xs font-medium tracking-[0.12em] text-faint uppercase">{featured.stackLabel}</p>
                   <ul className="mt-2 flex flex-wrap gap-2">
                     {featured.tags.map((tag) => (

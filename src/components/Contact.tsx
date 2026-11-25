@@ -1,25 +1,38 @@
 import { Mail, MapPin, Phone } from "lucide-react"
-import { useState, type FormEvent } from "react"
+import { useId, useState, type FormEvent } from "react"
 import { contact } from "../content.ts"
 import { sendContactForm } from "../email.ts"
 import { useLocale } from "../locale.tsx"
 
 type Status = "idle" | "sending" | "sent" | "error"
+type ErrorKind = "offline" | "limit" | "server"
+
+function errorKind(error: unknown): ErrorKind {
+  if (!navigator.onLine) return "offline"
+  const status = (error as { status?: number })?.status
+  return status === 429 ? "limit" : "server"
+}
 
 export function Contact() {
   const { copy } = useLocale()
   const text = copy.contactSection
   const [status, setStatus] = useState<Status>("idle")
+  const [kind, setKind] = useState<ErrorKind>("server")
+  const uid = useId()
+  const ids = { name: `${uid}-name`, email: `${uid}-email`, message: `${uid}-message`, error: `${uid}-error` }
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (status === "sending") return
+    // React anula currentTarget después del primer await: hay que guardar el form antes.
+    const form = event.currentTarget
     setStatus("sending")
     try {
-      await sendContactForm(event.currentTarget)
-      event.currentTarget.reset()
+      await sendContactForm(form)
+      form.reset()
       setStatus("sent")
-    } catch {
+    } catch (error) {
+      setKind(errorKind(error))
       setStatus("error")
     }
   }
@@ -59,9 +72,10 @@ export function Contact() {
             </div>
           </div>
           <form onSubmit={handleSubmit} className="relative z-10 flex flex-col gap-4">
-            <label className="flex flex-col gap-2 text-sm text-muted">
-              {text.nameLabel}
+            <div className="flex flex-col gap-2 text-sm text-muted">
+              <label htmlFor={ids.name}>{text.nameLabel}</label>
               <input
+                id={ids.name}
                 name="from_name"
                 type="text"
                 required
@@ -70,10 +84,11 @@ export function Contact() {
                 disabled={status === "sending"}
                 className="h-11 rounded-2xl border border-white/20 bg-black/35 px-4 text-base text-text placeholder:text-white/60"
               />
-            </label>
-            <label className="flex flex-col gap-2 text-sm text-muted">
-              {text.emailLabel}
+            </div>
+            <div className="flex flex-col gap-2 text-sm text-muted">
+              <label htmlFor={ids.email}>{text.emailLabel}</label>
               <input
+                id={ids.email}
                 name="from_email"
                 type="email"
                 required
@@ -82,10 +97,11 @@ export function Contact() {
                 disabled={status === "sending"}
                 className="h-11 rounded-2xl border border-white/20 bg-black/35 px-4 text-base text-text placeholder:text-white/60"
               />
-            </label>
-            <label className="flex flex-col gap-2 text-sm text-muted">
-              {text.messageLabel}
+            </div>
+            <div className="flex flex-col gap-2 text-sm text-muted">
+              <label htmlFor={ids.message}>{text.messageLabel}</label>
               <textarea
+                id={ids.message}
                 name="message"
                 required
                 rows={5}
@@ -93,7 +109,7 @@ export function Contact() {
                 disabled={status === "sending"}
                 className="rounded-2xl border border-white/20 bg-black/35 px-4 py-3 text-base text-text placeholder:text-white/60"
               />
-            </label>
+            </div>
             <button
               type="submit"
               disabled={status === "sending"}
@@ -106,11 +122,13 @@ export function Contact() {
             </p>
             {status === "sent" ? <p className="text-sm text-muted">{text.success}</p> : null}
             {status === "error" ? (
-              <p className="text-sm text-muted" role="alert">
-                {text.error}{" "}
-                <a className="underline" href={`mailto:${contact.email}`}>
-                  {contact.email}
-                </a>
+              <p id={ids.error} className="text-sm text-muted" role="alert">
+                {kind === "offline" ? text.errorOffline : kind === "limit" ? text.errorLimit : text.error}{" "}
+                {kind === "offline" ? null : (
+                  <a className="underline" href={`mailto:${contact.email}`}>
+                    {contact.email}
+                  </a>
+                )}
               </p>
             ) : null}
           </form>

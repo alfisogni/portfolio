@@ -18,7 +18,7 @@ export const technologies = [
   "SCSS",
   "Python",
   "Docker",
-  "IA Prompts",
+  "{ai}", // se reemplaza por copy.about.aiPrompts (ES "IA Prompts", EN "AI Prompts")
   "HTML/CSS",
 ]
 
@@ -87,6 +87,7 @@ type Copy = {
     bio: [string, string, string]
     experience: { title: string; detail: string }[]
     technologies: string
+    aiPrompts: string
   }
   work: {
     title: string
@@ -107,6 +108,8 @@ type Copy = {
     sent: string
     success: string
     error: string
+    errorOffline: string
+    errorLimit: string
   }
   video: {
     pause: string
@@ -154,6 +157,7 @@ export const copy: Record<Locale, Copy> = {
         { title: "Con ayuda de IA", detail: "Prototipado y productividad" },
       ],
       technologies: "Tecnologías",
+      aiPrompts: "IA Prompts",
     },
     work: {
       title: "Proyectos",
@@ -194,7 +198,9 @@ export const copy: Record<Locale, Copy> = {
       sending: "Enviando…",
       sent: "Mensaje enviado",
       success: "Listo. Te respondo pronto.",
-      error: "No se pudo enviar. Escribime a",
+      error: "El servicio de envío no respondió. Tu mensaje sigue en el formulario: probá de nuevo en un rato o escribime a",
+      errorOffline: "No hay conexión a internet. Tu mensaje sigue en el formulario: reconectate y volvé a enviarlo.",
+      errorLimit: "Se alcanzó el límite de envíos por ahora. Esperá unos minutos y volvé a intentar, o escribime a",
     },
     video: {
       pause: "Pausar reel",
@@ -240,6 +246,7 @@ export const copy: Record<Locale, Copy> = {
         { title: "AI-assisted", detail: "Prototyping and productivity" },
       ],
       technologies: "Technologies",
+      aiPrompts: "AI Prompts",
     },
     work: {
       title: "Projects",
@@ -280,7 +287,9 @@ export const copy: Record<Locale, Copy> = {
       sending: "Sending…",
       sent: "Message sent",
       success: "Done. I'll reply soon.",
-      error: "Couldn't send. Email me at",
+      error: "The sending service didn't respond. Your message is still in the form: try again in a bit or email me at",
+      errorOffline: "You're offline. Your message is still in the form: reconnect and send it again.",
+      errorLimit: "The sending limit was reached for now. Wait a few minutes and try again, or email me at",
     },
     video: {
       pause: "Pause reel",

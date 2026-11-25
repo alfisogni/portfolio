@@ -19,3 +19,5 @@ http://127.0.0.1:5179/ at 390 and at 1024.
 - Menu: opens with focus on the first link, Escape closes and focuses the button, a link closes it, widening to 768 closes it
 - grep finds no glass-pill, no text-[15px], no rounded-[..] and no inline font name in src
 - About at 1024: three rows share the same left and right edges. At 375 they stack with no overflow
+- Contact form with a stubbed fetch: 200 shows sending then sent and resets. 429, 500 and offline each show their own message and keep the text. Never test with the real EmailJS call, it mails Luca
+- EN lists “AI Prompts”, ES lists “IA Prompts”

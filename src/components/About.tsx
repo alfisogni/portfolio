@@ -59,7 +59,7 @@ export function About() {
             <ul className="flex flex-wrap gap-2">
               {technologies.map((name) => (
                 <li key={name} className="chip px-3 py-1.5 text-sm text-text/85">
-                  {name}
+                  {name === "{ai}" ? copy.about.aiPrompts : name}
                 </li>
               ))}
             </ul>

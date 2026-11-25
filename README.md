@@ -30,7 +30,7 @@ Sitio estático de una sola página con secciones de presentación, sobre mí, p
 |------|-------------|
 | App | React, TypeScript, Vite |
 | Estilos | Tailwind CSS |
-| Video | hls.js, reel de Mux |
+| Video | MP4 local en `public/bg.mp4` |
 | Contacto | EmailJS |
 | Deploy | Vercel, al pushear `main` de este repo |
 

@@ -28,10 +28,10 @@ export function Work() {
                 </a>
                 <div>
                   <h3 className="text-2xl font-medium text-white">{project.name}</h3>
-                  <p className="mt-3 text-[15px] leading-relaxed text-white/75">{text.description}</p>
+                  <p className="mt-3 text-[15px] leading-relaxed text-white/78">{text.description}</p>
                   <ul className="mt-5 flex flex-wrap gap-2">
                     {text.tags.map((tag) => (
-                      <li key={tag} className="glass-pill px-3 py-1 text-xs text-white/75">
+                      <li key={tag} className="glass-pill px-3 py-1 text-xs text-white/78">
                         {tag}
                       </li>
                     ))}

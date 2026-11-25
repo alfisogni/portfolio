@@ -5,6 +5,9 @@ Entry. Follow the id.
 - id: video
   file: src/components/BackgroundVideo.tsx
   depends: []
+- id: veil
+  file: src/index.css (.bg-veil), src/components/BackgroundVideo.tsx
+  depends: [video]
 - id: glass
   file: src/index.css
   depends: [video]
@@ -23,4 +26,5 @@ Entry. Follow the id.
 - write -> phrase: the bar and the hero open one field
 - locale -> phrase: the lines follow ES | EN
 
-- glass rejects: sampling the frame, flipping the ink, a fixed black veil
+- veil -> glass: the veil sits under the blur, so the block stays calm over bright smoke
+- glass rejects: sampling the frame, flipping the ink

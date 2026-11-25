@@ -37,7 +37,7 @@ export function Contact() {
         </h2>
         <div className="mt-10 grid gap-12 md:grid-cols-2 md:items-start">
           <div>
-            <p className="max-w-md text-[15px] leading-relaxed text-white/75">{text.intro}</p>
+            <p className="max-w-md text-[15px] leading-relaxed text-white/78">{text.intro}</p>
             <ul className="mt-8 space-y-5 text-sm">
               <li>
                 <a href={`mailto:${contact.email}`} className="pressable flex items-center gap-3 text-white/85 hover:text-white">
@@ -75,7 +75,7 @@ export function Contact() {
                 autoComplete="name"
                 placeholder={text.namePlaceholder}
                 disabled={status === "sending"}
-                className="h-11 rounded-2xl border border-white/20 bg-black/35 px-4 text-base text-white placeholder:text-white/40"
+                className="h-11 rounded-2xl border border-white/20 bg-black/35 px-4 text-base text-white placeholder:text-white/60"
               />
             </label>
             <label className="flex flex-col gap-2 text-sm text-white/80">
@@ -87,7 +87,7 @@ export function Contact() {
                 autoComplete="email"
                 placeholder={text.emailPlaceholder}
                 disabled={status === "sending"}
-                className="h-11 rounded-2xl border border-white/20 bg-black/35 px-4 text-base text-white placeholder:text-white/40"
+                className="h-11 rounded-2xl border border-white/20 bg-black/35 px-4 text-base text-white placeholder:text-white/60"
               />
             </label>
             <label className="flex flex-col gap-2 text-sm text-white/80">
@@ -98,7 +98,7 @@ export function Contact() {
                 rows={5}
                 placeholder={text.messagePlaceholder}
                 disabled={status === "sending"}
-                className="rounded-2xl border border-white/20 bg-black/35 px-4 py-3 text-base text-white placeholder:text-white/40"
+                className="rounded-2xl border border-white/20 bg-black/35 px-4 py-3 text-base text-white placeholder:text-white/60"
               />
             </label>
             <button
@@ -123,7 +123,7 @@ export function Contact() {
           </form>
         </div>
       </div>
-      <p className="mx-auto mt-10 max-w-5xl px-2 text-xs text-white/55">
+      <p className="mx-auto mt-10 max-w-5xl px-2 text-xs text-white/65">
         © {new Date().getFullYear()} Luca Alejandro Fisogni
       </p>
     </section>

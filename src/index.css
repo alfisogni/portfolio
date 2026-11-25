@@ -37,9 +37,14 @@ body {
   outline-offset: 3px;
 }
 
+.bg-veil {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 45%, rgba(5, 4, 8, 0.2), transparent 75%),
+    linear-gradient(180deg, rgba(5, 4, 8, 0.42) 0%, rgba(5, 4, 8, 0.3) 45%, rgba(5, 4, 8, 0.38) 100%);
+}
+
 .liquid-glass {
-  background: rgba(255, 255, 255, 0.01);
-  background-blend-mode: luminosity;
+  background: rgba(10, 8, 18, 0.55);
   backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
   border: none;
@@ -72,7 +77,7 @@ body {
 }
 
 .glass-pill {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(20px) saturate(180%);
   border-radius: 9999px;
   box-shadow: none !important;

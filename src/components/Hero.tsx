@@ -140,7 +140,7 @@ export function Hero() {
                     placeholder={placeholder}
                     aria-label={copy.hero.emailLabel}
                     disabled={status === "sending"}
-                    className="w-full bg-transparent text-base text-white placeholder:text-white/45"
+                    className="w-full bg-transparent text-base text-white placeholder:text-white/60"
                   />
                   <button
                     type="submit"
@@ -198,7 +198,7 @@ export function Hero() {
           >
             <a
               href="#work"
-              className="pressable text-[13px] font-medium tracking-wide text-white/80 transition-colors duration-300 hover:text-white/40"
+              className="pressable text-[13px] font-medium tracking-wide text-white/80 transition-colors duration-300 hover:text-white"
             >
               {copy.hero.work}
             </a>

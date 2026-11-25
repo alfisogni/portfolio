@@ -63,6 +63,8 @@ export function BackgroundVideo() {
           <source key={file.src} src={file.src} type={file.type} />
         ))}
       </video>
+      {/* Velo: promedio 35 %, más denso arriba (barra) y en el centro (titular). Medido: texto del hero 6,9:1 en el peor cuadro. */}
+      <div className="bg-veil absolute inset-0" aria-hidden="true" />
     </div>
   )
 }

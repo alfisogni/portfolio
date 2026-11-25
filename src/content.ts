@@ -222,7 +222,7 @@ export const copy: Record<Locale, Copy> = {
       problem:
         "Las tareas estaban repartidas en varias plataformas, sin una vista única. El equipo trabajaba con la incertidumbre de no saber con claridad qué había que hacer, quién lo tenía y qué estaba por vencer.",
       decision:
-        "Un solo tablero, sincronizado donde hace falta. SharePoint es la única fuente de verdad, sin base de datos propia: el frontend habla directo con Microsoft Graph y un backend mínimo atiende solo los webhooks de Azure DevOps y los trabajos de sincronización. Tomé estas decisiones de arquitectura y aprendí Azure en el camino: identidad, Key Vault, Graph y DevOps.",
+        "Un solo tablero, sincronizado donde hace falta. SharePoint es la única fuente de verdad, sin base de datos propia: el frontend habla directo con Microsoft Graph y un backend mínimo atiende solo los webhooks de Azure DevOps y los trabajos de sincronización. Tomé estas decisiones de arquitectura y aprendí Azure en el camino: identidad, Key Vault y Graph.",
       result:
         "Más de dos meses en uso por equipos enteros. Trabajo más organizado y trackeado, con mejoras de productividad y de orden, y una certeza que el equipo hacía tiempo no tenía. Las devoluciones son positivas y lo que piden son ajustes menores, como textos o campos nuevos.",
       tags: ["React", "TypeScript", "Ant Design", "MSAL", "Microsoft Graph", "SharePoint", "Azure DevOps", "Microsoft Planner", "Node.js", "Express"],
@@ -332,7 +332,7 @@ export const copy: Record<Locale, Copy> = {
       problem:
         "Tasks were spread across several platforms with no single view. The team worked with the uncertainty of not knowing clearly what had to be done, who owned it and what was about to be due.",
       decision:
-        "One board, synced where it is needed. SharePoint is the single source of truth, with no database of its own: the frontend talks straight to Microsoft Graph, and a minimal backend handles only Azure DevOps webhooks and the sync jobs. I made these architecture decisions and learned Azure along the way: identity, Key Vault, Graph and DevOps.",
+        "One board, synced where it is needed. SharePoint is the single source of truth, with no database of its own: the frontend talks straight to Microsoft Graph, and a minimal backend handles only Azure DevOps webhooks and the sync jobs. I made these architecture decisions and learned Azure along the way: identity, Key Vault and Graph.",
       result:
         "More than two months in use by whole teams. Work is better organized and tracked, with gains in productivity and order, and a certainty the team had lacked for a long time. Feedback is positive, and what they ask for are minor tweaks, such as text or new fields.",
       tags: ["React", "TypeScript", "Ant Design", "MSAL", "Microsoft Graph", "SharePoint", "Azure DevOps", "Microsoft Planner", "Node.js", "Express"],

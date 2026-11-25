@@ -1,7 +1,7 @@
 export type Locale = "es" | "en"
 
 export const portrait = {
-  src: "/yo.png",
+  src: "/yo.webp",
   alt: "Luca Alejandro Fisogni, desarrollador frontend — foto de perfil",
 }
 
@@ -26,7 +26,7 @@ export const projectMedia = [
   {
     name: "ClipFlow",
     href: "https://clip-flow-studio.vercel.app",
-    image: "/projects/clipflow.png",
+    image: "/projects/clipflow.webp",
   },
   {
     name: "Mystic Trading",
@@ -36,12 +36,12 @@ export const projectMedia = [
   {
     name: "Thot",
     href: "https://thot-scout-sys.vercel.app/login",
-    image: "/projects/thot.png",
+    image: "/projects/thot.webp",
   },
   {
     name: "Minerva",
     href: "https://minerva-nine-xi.vercel.app",
-    image: "/projects/minerva.png",
+    image: "/projects/minerva.webp",
   },
 ]
 

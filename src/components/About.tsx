@@ -12,7 +12,7 @@ export function About() {
         {/* Principal: relleno y sombra. Es lo primero que se lee. */}
         <Reveal as="article" delay={0} className="card-1 p-card md:col-span-12 md:p-card-lg">
           <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-center">
-            <img src={portrait.src} alt={portrait.alt} className="profile-img shrink-0" />
+            <img loading="lazy" decoding="async" src={portrait.src} alt={portrait.alt} className="profile-img shrink-0" />
             <div className="w-full">
               <h2 className="font-display text-heading font-medium text-text">{copy.about.title}</h2>
               <p data-nosnippet="" className="mt-5 text-body text-muted">

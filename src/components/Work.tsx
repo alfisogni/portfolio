@@ -38,7 +38,7 @@ export function Work() {
                   className="pressable block overflow-hidden"
                 >
                   <img
-                    src={lead.project.image}
+loading="lazy" decoding="async"                     src={lead.project.image}
                     alt={lead.project.name}
                     className="aspect-video h-full w-full object-cover transition-transform duration-500 hover:scale-[1.03] md:aspect-auto"
                   />
@@ -102,7 +102,7 @@ export function Work() {
                 className="pressable block overflow-hidden rounded-media"
               >
                 <img
-                  src={project.image}
+loading="lazy" decoding="async"                   src={project.image}
                   alt={project.name}
                   className="aspect-video w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
                 />

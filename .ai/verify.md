@@ -26,7 +26,7 @@ http://127.0.0.1:5179/ at 390 and at 1024.
 - Reduced motion (emulated): .page-scroll has no lenis class, pending count is 0
 - Do not run a regex over index.css that spans blocks. It once ate the reduced-transparency block. Run npm run build after any CSS edit
 - Work: one wide featured card and four compact cards (2x2) at 1024; all stack at 375 with no overflow
-- Page text must not match /sinaptic|enarsa|sisifo|sísifo|beccar|andes|hábitat/i (client and employer names stay out)
+- Page text must not contain the name of any employer, client or internal project. Keep that list outside this public repo and check against it by hand
 - Every link and button is 44x44 or more at 375 and at 1440
 - Before any deploy: document.querySelectorAll('[data-placeholder]').length must be 0
 - Technologies: at 1440 and 375 the ring renders with 15 tiles and 15 mirrored backs, overflow 0. With reduced motion there is no .tech-stage, 15 flat tiles. Build must not bundle unused simple-icons

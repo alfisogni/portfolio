@@ -52,3 +52,4 @@ One line. The id points at graph.md.
 - legacy: legacy/ still holds an old email template and setup notes that say Backend Specialist. It is not deployed. Consider deleting legacy/ from the public repo
 - role: Luca's formal title at Sinaptic is just Desarrollador, so the CV role line says that. Full Stack stays only as a descriptor inside the summary. The headline AI Growth Engineer is his positioning, not a job title
 - tech: Supabase added to the CV tools, to the site ring (16 tiles now) and to llms.txt. It comes from his ClipFlow project
+- role: Luca has no formal title at Sinaptic. He was placed in the Development team for his skills, with no fixed role, and does many things. The CV role line says Equipo de Desarrollo, rol multidisciplinar, instead of inventing a title or shrinking him to Desarrollador. The headline AI Growth Engineer is positioning. Supersedes the earlier line that said the title is just Desarrollador

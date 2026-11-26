@@ -19,7 +19,7 @@ export const technologies = [
   "Python",
   "Docker",
   "Supabase",
-  "{ai}", // se reemplaza por copy.about.aiPrompts (ES "IA Prompts", EN "AI Prompts")
+  "{ai}", // se reemplaza por copy.about.aiAgents (ES "Agentes de IA", EN "AI Agents")
   "n8n",
   "HTML/CSS",
 ]
@@ -88,7 +88,7 @@ type Copy = {
     bio: [string, string, string]
     experience: { title: string; detail: string }[]
     technologies: string
-    aiPrompts: string
+    aiAgents: string
     techHint: string
   }
   work: {
@@ -182,7 +182,7 @@ export const copy: Record<Locale, Copy> = {
         { title: "Con ayuda de IA", detail: "Prototipado, automatización y productividad" },
       ],
       technologies: "Tecnologías",
-      aiPrompts: "IA Prompts",
+      aiAgents: "Agentes de IA",
       techHint: "Arrastrá para girar",
     },
     work: {
@@ -295,7 +295,7 @@ export const copy: Record<Locale, Copy> = {
         { title: "AI-assisted", detail: "Prototyping, automation and productivity" },
       ],
       technologies: "Technologies",
-      aiPrompts: "AI Prompts",
+      aiAgents: "AI Agents",
       techHint: "Drag to rotate",
     },
     work: {

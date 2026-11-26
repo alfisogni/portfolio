@@ -22,7 +22,7 @@ One line. The id points at graph.md.
 - scroll: Lenis 1.3.27 (exact), one instance on .page-scroll, not window. No GSAP, so one clock (autoRaf). 1.3.28 was 2 days old, so it waits. Off under reduced motion, also if the setting flips while open. Anchors go through lenis.scrollTo from one document listener, because the bar sits outside the scroller
 - scroll: any future inner scroller needs data-lenis-prevent. None exists today
 - reveal: opacity + 16px, 800ms, transform and opacity only. Only what starts below the fold is hidden, and it shows as it nears the view or once the person scrolls past it. Reduced motion hides nothing. The old observer fade on the portrait is gone
-- locale: ES | EN, stored in localStorage. “IA Prompts” in ES, “AI Prompts” in EN (about.aiPrompts)
+- locale: ES | EN, stored in localStorage. the AI tile says “Agentes de IA” in ES and “AI Agents” in EN (about.aiAgents). It used to say Prompts, which Luca found filler because everyone writes prompts
 - phrase: the bar name is “Luca Fisogni”. The photo is only in Sobre mí
 - video: four projects stay, ClipFlow, Mystic, Thot, Minerva
 - work: the featured card is Tántalo, “Gestor de tareas con sincronización”. It stands for professional work, so it carries no organization name, no screenshot, no link and no code. The tool name is Luca's own pick. The text is checked against the real project before it goes in

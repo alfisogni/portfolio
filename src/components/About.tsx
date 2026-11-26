@@ -55,7 +55,7 @@ export function About() {
             <TechRing
               items={technologies.map((name) => ({
                 key: name === "{ai}" ? "ai" : name,
-                label: name === "{ai}" ? copy.about.aiPrompts : name,
+                label: name === "{ai}" ? copy.about.aiAgents : name,
               }))}
             />
           </div>

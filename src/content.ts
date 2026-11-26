@@ -172,14 +172,14 @@ export const copy: Record<Locale, Copy> = {
     about: {
       title: "Sobre mí",
       bio: [
-        "Soy desarrollador web enfocado en frontend y diseño de interfaces, interesado en construir productos claros y funcionales, bien pensados desde la experiencia de usuario hasta la implementación técnica. Trabajo principalmente con React y TypeScript, desarrollando interfaces, dashboards y aplicaciones web. Tengo experiencia integrando APIs, gestionando datos y estructurando proyectos.",
-        "Participo en diseño de interfaz, arquitectura frontend y desarrollo de producto.",
+        "Soy AI Growth Engineer: uso IA y automatización para que los equipos trabajen mejor, desde entender el problema hasta mantener la solución en producción. Desarrollo con React y TypeScript, con fortaleza en arquitectura e integración con Microsoft 365 y Azure.",
+        "Participo en arquitectura, desarrollo de producto y diseño de interfaces, y siempre busco oportunidades de mejora que propongo de forma colaborativa al equipo.",
         "Utilizo herramientas de IA como apoyo para acelerar prototipos, explorar ideas y mejorar la productividad, manteniendo siempre el control sobre la arquitectura del sistema. Me caracterizo por la proactividad y la curiosidad técnica.",
       ],
       experience: [
-        { title: "Frontend", detail: "React · TypeScript" },
+        { title: "Desarrollo", detail: "React · TypeScript · Node.js" },
         { title: "UX y producto", detail: "Diseño de interfaces y dirección visual" },
-        { title: "Con ayuda de IA", detail: "Prototipado, automatización y productividad" },
+        { title: "IA y automatización", detail: "Agentes, n8n y productividad" },
       ],
       technologies: "Tecnologías",
       aiAgents: "Agentes de IA",
@@ -285,14 +285,14 @@ export const copy: Record<Locale, Copy> = {
     about: {
       title: "About",
       bio: [
-        "I'm a web developer focused on frontend and interface design, interested in building products that are clear and functional, thought through from the user experience to the technical implementation. I work mainly with React and TypeScript, building interfaces, dashboards, and web applications. I have experience integrating APIs, managing data, and structuring projects.",
-        "I take part in interface design, frontend architecture, and product development.",
+        "I'm an AI Growth Engineer: I use AI and automation to help teams work better, from understanding the problem to keeping the solution running in production. I build with React and TypeScript, with strengths in architecture and integration with Microsoft 365 and Azure.",
+        "I take part in architecture, product development and interface design, and I'm always looking for improvements that I propose collaboratively to the team.",
         "I use AI tools to speed up prototypes, explore ideas, and work faster, while keeping control of the system architecture. I tend to be proactive and technically curious.",
       ],
       experience: [
-        { title: "Frontend", detail: "React · TypeScript" },
+        { title: "Development", detail: "React · TypeScript · Node.js" },
         { title: "UX & Product", detail: "Interface design and visual direction" },
-        { title: "AI-assisted", detail: "Prototyping, automation and productivity" },
+        { title: "AI & automation", detail: "Agents, n8n and productivity" },
       ],
       technologies: "Technologies",
       aiAgents: "AI Agents",

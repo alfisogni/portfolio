@@ -7,7 +7,7 @@ LinkedIn: https://www.linkedin.com/in/luca-fisogni-50279a350
 GitHub: https://github.com/alfisogni
 
 /* SITE */
-Last update: 2026/10/18
+Last update: 2026/11/26
 Language: ES / EN
 Standards: HTML5, CSS, JavaScript
 Components: React, TypeScript, Vite, Tailwind CSS

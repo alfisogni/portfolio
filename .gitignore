@@ -43,6 +43,7 @@ build/
 *.mov
 *.wmv
 !public/bg.mp4
+!public/bg-mobile.mp4
 
 # Carpeta de imágenes grandes (opcional, puedes comentar si quieres versionar las imágenes)
 # images/*.jpg

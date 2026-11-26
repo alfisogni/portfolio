@@ -1,12 +1,13 @@
 import { Mail, MapPin } from "lucide-react"
-import { useId, useState, type FormEvent } from "react"
+import { useEffect, useId, useRef, useState, type FormEvent } from "react"
 import { contact } from "../content.ts"
+import { cooldownLeft, looksLikeBot, markSent } from "../antispam.ts"
 import { sendContactForm } from "../email.ts"
 import { useLocale } from "../locale.tsx"
 import { Reveal } from "../reveal.tsx"
 
 type Status = "idle" | "sending" | "sent" | "error"
-type ErrorKind = "offline" | "limit" | "server"
+type ErrorKind = "offline" | "limit" | "server" | "cooldown"
 
 function errorKind(error: unknown): ErrorKind {
   if (!navigator.onLine) return "offline"
@@ -20,6 +21,10 @@ export function Contact() {
   const [status, setStatus] = useState<Status>("idle")
   const [kind, setKind] = useState<ErrorKind>("server")
   const uid = useId()
+  const openedAt = useRef(0)
+  useEffect(() => {
+    openedAt.current = Date.now()
+  }, [])
   const ids = { name: `${uid}-name`, email: `${uid}-email`, message: `${uid}-message`, error: `${uid}-error` }
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -27,9 +32,22 @@ export function Contact() {
     if (status === "sending") return
     // React anula currentTarget después del primer await: hay que guardar el form antes.
     const form = event.currentTarget
+    // Bots: campo trampa lleno o formulario enviado al instante. No se envía nada y se simula el éxito.
+    const trap = String(new FormData(form).get("website") ?? "")
+    if (looksLikeBot(trap, openedAt.current, 3000)) {
+      form.reset()
+      setStatus("sent")
+      return
+    }
+    if (cooldownLeft() > 0) {
+      setKind("cooldown")
+      setStatus("error")
+      return
+    }
     setStatus("sending")
     try {
       await sendContactForm(form)
+      markSent()
       form.reset()
       setStatus("sent")
     } catch (error) {
@@ -67,6 +85,13 @@ export function Contact() {
             </div>
           </div>
           <form onSubmit={handleSubmit} className="relative z-10 flex flex-col gap-4">
+            {/* Campo trampa: invisible y fuera del teclado. Una persona no lo completa; un bot sí. */}
+            <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+              <label>
+                Website
+                <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+              </label>
+            </div>
             <div className="flex flex-col gap-2 text-sm text-muted">
               <label htmlFor={ids.name}>{text.nameLabel}</label>
               <input
@@ -118,8 +143,14 @@ export function Contact() {
             {status === "sent" ? <p className="text-sm text-muted">{text.success}</p> : null}
             {status === "error" ? (
               <p id={ids.error} className="text-sm text-muted" role="alert">
-                {kind === "offline" ? text.errorOffline : kind === "limit" ? text.errorLimit : text.error}{" "}
-                {kind === "offline" ? null : (
+                {kind === "offline"
+                  ? text.errorOffline
+                  : kind === "limit"
+                    ? text.errorLimit
+                    : kind === "cooldown"
+                      ? text.errorCooldown
+                      : text.error}{" "}
+                {kind === "offline" || kind === "cooldown" ? null : (
                   <a className="underline" href={`mailto:${contact.email}`}>
                     {contact.email}
                   </a>

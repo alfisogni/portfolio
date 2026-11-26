@@ -75,6 +75,7 @@ type Copy = {
     sending: string
     error: string
     cancel: string
+    errorCooldown: string
     work: string
     emailLabel: string
     send: string
@@ -131,6 +132,7 @@ type Copy = {
     error: string
     errorOffline: string
     errorLimit: string
+    errorCooldown: string
   }
   video: {
     pause: string
@@ -159,6 +161,7 @@ export const copy: Record<Locale, Copy> = {
       sending: "Enviando…",
       error: "No se pudo enviar. Escribime a",
       cancel: "Cancelar",
+      errorCooldown: "Ya enviaste un mensaje hace un momento. Esperá un minuto antes de mandar otro.",
       work: "Ver proyectos",
       emailLabel: "Email",
       send: "Enviar email",
@@ -244,6 +247,7 @@ export const copy: Record<Locale, Copy> = {
       error: "El servicio de envío no respondió. Tu mensaje sigue en el formulario: probá de nuevo en un rato o escribime a",
       errorOffline: "No hay conexión a internet. Tu mensaje sigue en el formulario: reconectate y volvé a enviarlo.",
       errorLimit: "Se alcanzó el límite de envíos por ahora. Esperá unos minutos y volvé a intentar, o escribime a",
+      errorCooldown: "Ya enviaste un mensaje hace un momento. Esperá un minuto antes de mandar otro.",
     },
     video: {
       pause: "Pausar reel",
@@ -270,6 +274,7 @@ export const copy: Record<Locale, Copy> = {
       sending: "Sending…",
       error: "Couldn't send. Email me at",
       cancel: "Cancel",
+      errorCooldown: "You just sent a message. Please wait a minute before sending another.",
       work: "View Selected Work",
       emailLabel: "Email",
       send: "Send email",
@@ -355,6 +360,7 @@ export const copy: Record<Locale, Copy> = {
       error: "The sending service didn't respond. Your message is still in the form: try again in a bit or email me at",
       errorOffline: "You're offline. Your message is still in the form: reconnect and send it again.",
       errorLimit: "The sending limit was reached for now. Wait a few minutes and try again, or email me at",
+      errorCooldown: "You just sent a message. Please wait a minute before sending another.",
     },
     video: {
       pause: "Pause reel",

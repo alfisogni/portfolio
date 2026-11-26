@@ -1,7 +1,8 @@
 import { ArrowRight, Check } from "lucide-react"
 import { AnimatePresence, motion, useReducedMotion } from "motion/react"
-import { useEffect, useState, type FormEvent } from "react"
+import { useEffect, useRef, useState, type FormEvent } from "react"
 import { contact } from "../content.ts"
+import { cooldownLeft, looksLikeBot, markSent } from "../antispam.ts"
 import { sendHeroEmail } from "../email.ts"
 import { useLocale } from "../locale.tsx"
 import { useWrite } from "../write.tsx"
@@ -15,6 +16,14 @@ export function Hero() {
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState<Status>("idle")
   const [placeholder, setPlaceholder] = useState("")
+  const [trap, setTrap] = useState("")
+  const [cooling, setCooling] = useState(false)
+  const openedAt = useRef(0)
+
+  // Se anota cuándo se abre el campo de mail: enviar antes de ~1 s es de un bot.
+  useEffect(() => {
+    if (open) openedAt.current = Date.now()
+  }, [open])
 
   const enter = reduced ? { opacity: 0 } : { opacity: 0, y: 16 }
   const shown = { opacity: 1, y: 0 }
@@ -71,9 +80,23 @@ export function Hero() {
     event.preventDefault()
     const address = email.trim()
     if (!address || status === "sending") return
+    // Bots: campo trampa lleno o envío al instante. No se envía nada y se simula el éxito.
+    if (looksLikeBot(trap, openedAt.current, 1200)) {
+      setEmail("")
+      setTrap("")
+      setStatus("sent")
+      return
+    }
+    if (cooldownLeft() > 0) {
+      setCooling(true)
+      setStatus("error")
+      return
+    }
+    setCooling(false)
     setStatus("sending")
     try {
       await sendHeroEmail(address, copy.hero.heroMessage)
+      markSent()
       setEmail("")
       setStatus("sent")
     } catch {
@@ -130,6 +153,16 @@ export function Hero() {
                   className="flex w-full max-w-[320px] items-center gap-2 rounded-full border border-white/20 bg-white/[0.02] py-1.5 pr-1.5 pl-5 backdrop-blur-sm transition-colors duration-300 focus-within:border-white/40"
                 >
                   <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    value={trap}
+                    onChange={(event) => setTrap(event.target.value)}
+                    className="absolute -left-[9999px] h-0 w-0 opacity-0"
+                  />
+                  <input
                     type="email"
                     required
                     autoFocus
@@ -183,10 +216,12 @@ export function Hero() {
             </p>
             {status === "error" ? (
               <p className="mt-3 max-w-sm text-sm text-muted" role="alert">
-                {copy.hero.error}{" "}
-                <a className="underline" href={`mailto:${contact.email}`}>
-                  {contact.email}
-                </a>
+                {cooling ? copy.hero.errorCooldown : copy.hero.error}{" "}
+                {cooling ? null : (
+                  <a className="underline" href={`mailto:${contact.email}`}>
+                    {contact.email}
+                  </a>
+                )}
               </p>
             ) : null}
           </motion.div>

@@ -211,7 +211,7 @@ export const copy: Record<Locale, Copy> = {
         },
       ],
     featured: {
-      name: "Tántalo",
+      name: "Sisifo",
       label: "Caso destacado",
       tagline: "Gestor de tareas con sincronización",
       description:
@@ -324,7 +324,7 @@ export const copy: Record<Locale, Copy> = {
         },
       ],
     featured: {
-      name: "Tántalo",
+      name: "Sisifo",
       label: "Featured case",
       tagline: "Task manager with sync",
       description:

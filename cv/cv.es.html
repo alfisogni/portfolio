@@ -1,0 +1,233 @@
+<!doctype html>
+<!--
+  Fuente del CV en PDF (public/Fisogni_Luca_Alejandro_CV.pdf).
+  Para regenerarlo, desde la raíz del repo (Chrome instalado):
+    chrome --headless=new --no-pdf-header-footer --print-to-pdf=public/Fisogni_Luca_Alejandro_CV.pdf cv/cv.es.html
+  Una sola columna y texto real: lo leen los filtros de selección automática. Sin teléfono a propósito.
+-->
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Luca Alejandro Fisogni · CV</title>
+    <meta name="author" content="Luca Alejandro Fisogni" />
+    <style>
+      @page {
+        size: A4;
+        margin: 11mm 14mm 10mm;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        font-size: 9.6pt;
+        line-height: 1.32;
+        color: #1b1b1f;
+      }
+      a {
+        color: #3b3a8f;
+        text-decoration: none;
+      }
+      header {
+        text-align: center;
+        padding-bottom: 7px;
+        border-bottom: 2px solid #1b1b1f;
+      }
+      h1 {
+        margin: 0 0 3px;
+        font-size: 22pt;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+      .contact {
+        font-size: 9.5pt;
+        color: #3a3a42;
+      }
+      .contact span + span::before {
+        content: "·";
+        margin: 0 7px;
+        color: #8a8a94;
+      }
+      h2 {
+        margin: 10px 0 4px;
+        padding-bottom: 2px;
+        font-size: 10.5pt;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border-bottom: 1px solid #c9c9d1;
+        break-after: avoid;
+      }
+      p {
+        margin: 0 0 4px;
+      }
+      .job {
+        margin-bottom: 7px;
+        break-inside: avoid-page;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .org {
+        font-weight: 700;
+        font-size: 10.5pt;
+      }
+      .role {
+        font-weight: 600;
+      }
+      .when {
+        color: #3a3a42;
+        white-space: nowrap;
+      }
+      .place {
+        color: #55555e;
+        font-size: 9.5pt;
+      }
+      ul {
+        margin: 3px 0 0;
+        padding-left: 16px;
+      }
+      li {
+        margin-bottom: 2px;
+        padding-left: 1px;
+      }
+      .tech {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .tech li {
+        margin-bottom: 3px;
+      }
+      .tech b {
+        font-weight: 700;
+      }
+      .edu .row + .row {
+        margin-top: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Luca Alejandro Fisogni</h1>
+      <div class="contact">
+        <span>Buenos Aires, Argentina</span><span><a href="mailto:alfisogni@gmail.com">alfisogni@gmail.com</a></span
+        ><span><a href="https://www.linkedin.com/in/luca-fisogni-50279a350/">LinkedIn</a></span
+        ><span><a href="https://github.com/alfisogni">GitHub</a></span
+        ><span><a href="https://www.luca-alejandro-fisogni.dev">luca-alejandro-fisogni.dev</a></span>
+      </div>
+    </header>
+
+    <p style="margin-top: 9px">
+      Desarrollador full stack con foco en frontend y diseño de interfaces (React y TypeScript). Construyo aplicaciones y
+      sistemas internos de punta a punta, desde la definición de requerimientos hasta el despliegue, incluida la
+      integración con Microsoft 365 y Azure (SharePoint, Graph, DevOps). Me interesa el diseño de producto y la
+      arquitectura de interfaces claras y mantenibles. Uso la IA como apoyo en el desarrollo y la integro en los
+      productos que construyo.
+    </p>
+
+    <h2>Experiencia profesional</h2>
+
+    <div class="job">
+      <div class="row">
+        <span><span class="org">Sinaptic</span> · <span class="role">Desarrollador Full Stack</span></span>
+        <span class="when">Junio 2025 – Actualidad</span>
+      </div>
+      <div class="place">Buenos Aires, Argentina</div>
+      <ul>
+        <li>
+          <b>Gestor de tareas con sincronización</b> para equipos de Marketing y Desarrollo, desarrollado completo
+          (frontend y backend): React, TypeScript y Ant Design; Node.js y Express. SharePoint como única fuente de
+          verdad mediante Microsoft Graph, inicio de sesión con Microsoft (MSAL), sincronización en dos sentidos con
+          Azure DevOps y Microsoft Planner, y secretos en Azure Key Vault. Incluye análisis de flujo (tiempos de
+          ciclo y pronóstico) y registro de horas. Hace más de dos meses que lo usan equipos enteros, con mejoras de
+          organización y productividad.
+        </li>
+        <li>
+          <b>Asistente de IA</b> integrado al gestor: cada mañana arma el plan del día de cada persona, con las tareas
+          por las que conviene empezar y el motivo.
+        </li>
+        <li>
+          <b>Web parts SPFx para SharePoint</b> (React, Fluent UI, Tailwind): portal de proveedores para una empresa del
+          sector energético, tablero de seguimiento estratégico de proyectos y herramientas para una firma de servicios
+          profesionales.
+        </li>
+        <li>
+          <b>Frontend en React</b> de una plataforma de gestión de recuperos entre aseguradoras y estudios (casos,
+          asignaciones, gastos y aprobaciones), con backend en .NET.
+        </li>
+        <li>
+          <b>Plataforma de gestión de retiros</b>: dashboard web en React, backend en Node.js y app móvil para choferes
+          (Expo / React Native).
+        </li>
+        <li>
+          Diseño e implementación de interfaces con efecto de vidrio y animación para un agente de IA interno (login
+          bilingüe, chat con múltiples conversaciones).
+        </li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="row">
+        <span><span class="org">Desarrollo Web (Autónomo)</span> · <span class="role">Desarrollador Web</span></span>
+        <span class="when">Marzo 2024 – Actualidad</span>
+      </div>
+      <div class="place">Buenos Aires, Argentina</div>
+      <ul>
+        <li>
+          Proyectos web independientes, de punta a punta: análisis de requerimientos, diseño, desarrollo, despliegue y
+          mantenimiento.
+        </li>
+        <li>
+          Interfaces con React, TypeScript, Tailwind y librerías de componentes. Landing pages y aplicaciones.
+          Cliente destacado: Mystic Trading.
+        </li>
+        <li>
+          Proyectos propios: <b>ClipFlow</b> (generador de clips con IA para creadores), <b>Thot</b> (gestión de
+          objetivos para equipos) y <b>Minerva</b> (automatización de documentación técnica con IA).
+        </li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="row">
+        <span><span class="org">Municipio de La Matanza (DGTIC)</span> · <span class="role">Auxiliar Administrativo</span></span>
+        <span class="when">Septiembre 2024 – Noviembre 2024</span>
+      </div>
+      <div class="place">Buenos Aires, Argentina</div>
+      <ul>
+        <li>Colaboración en tareas administrativas dentro del área tecnológica del municipio.</li>
+        <li>Participación en procesos de organización, documentación y gestión interna.</li>
+      </ul>
+    </div>
+
+    <h2>Tecnologías</h2>
+    <ul class="tech">
+      <li><b>Frontend:</b> React, TypeScript, JavaScript, Tailwind, SCSS, shadcn/ui, Ant Design, Fluent UI, Framer Motion, HTML, CSS</li>
+      <li><b>Móvil:</b> React Native (Expo)</li>
+      <li><b>Backend:</b> Node.js, Express, PHP, API REST, Microsoft Graph</li>
+      <li><b>Bases de datos:</b> PostgreSQL, MySQL, listas de SharePoint</li>
+      <li><b>Nube y herramientas:</b> Azure (Key Vault, DevOps), SharePoint y SPFx, Git, Vercel, Docker, n8n</li>
+      <li><b>IA:</b> IA aplicada al desarrollo, prompts, integración de IA en productos</li>
+    </ul>
+
+    <h2>Educación</h2>
+    <div class="edu">
+      <div class="row">
+        <span><b>Escuela Secundaria Técnica N.º 6</b> · Técnico en Informática</span>
+        <span class="when">Marzo 2018 – Diciembre 2024</span>
+      </div>
+      <div class="place">Desarrollo web y de software, recursos IT y mantenimiento de hardware · Buenos Aires, Argentina</div>
+    </div>
+
+    <h2>Skills adicionales</h2>
+    <ul>
+      <li>Interés y práctica en diseño UX/UI y dirección visual.</li>
+      <li>Aprendizaje autodidacta y adaptación a nuevas tecnologías.</li>
+      <li>Inglés técnico para lectura de documentación.</li>
+    </ul>
+  </body>
+</html>

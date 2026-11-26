@@ -10,6 +10,7 @@ import {
   siPython,
   siReact,
   siSass,
+  siSupabase,
   siTypescript,
 } from "simple-icons"
 import { Sparkles, Webhook, type LucideIcon } from "lucide-react"
@@ -41,6 +42,7 @@ const GLYPHS: Record<string, Glyph> = {
   SCSS: { path: siSass.path },
   Python: { path: siPython.path },
   Docker: { path: siDocker.path },
+  Supabase: { path: siSupabase.path },
   n8n: { path: siN8n.path },
   "HTML/CSS": { path: siHtml5.path },
   ai: { lucide: Sparkles },

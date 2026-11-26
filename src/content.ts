@@ -18,6 +18,7 @@ export const technologies = [
   "SCSS",
   "Python",
   "Docker",
+  "Supabase",
   "{ai}", // se reemplaza por copy.about.aiPrompts (ES "IA Prompts", EN "AI Prompts")
   "n8n",
   "HTML/CSS",

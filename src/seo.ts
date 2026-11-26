@@ -16,18 +16,18 @@ export const seoCopy: Record<
   { title: string; description: string; keywords: string }
 > = {
   es: {
-    title: "Luca Alejandro Fisogni · Desarrollador Frontend",
+    title: "Luca Alejandro Fisogni · AI Growth Engineer",
     description:
-      "Portfolio de Luca Alejandro Fisogni, desarrollador web frontend en Buenos Aires. React, TypeScript, diseño de interfaces y productos digitales.",
+      "AI Growth Engineer en Buenos Aires. Uso IA y automatización para que los equipos trabajen mejor, de punta a punta. React, TypeScript, Microsoft 365 y Azure.",
     keywords:
-      "Luca Alejandro Fisogni, desarrollador frontend, React, TypeScript, portfolio, Buenos Aires, Argentina, diseñador UI, web developer",
+      "Luca Alejandro Fisogni, AI Growth Engineer, ingeniero de IA, automatización, desarrollador full stack, React, TypeScript, Microsoft 365, Azure, portfolio, Buenos Aires, Argentina",
   },
   en: {
-    title: "Luca Alejandro Fisogni · Frontend Developer",
+    title: "Luca Alejandro Fisogni · AI Growth Engineer",
     description:
-      "Portfolio of Luca Alejandro Fisogni, frontend web developer in Buenos Aires. React, TypeScript, interface design, and digital products.",
+      "AI Growth Engineer in Buenos Aires. I use AI and automation to help teams work better, end to end. React, TypeScript, Microsoft 365 and Azure.",
     keywords:
-      "Luca Alejandro Fisogni, frontend developer, React, TypeScript, portfolio, Buenos Aires, Argentina, UI designer, web developer",
+      "Luca Alejandro Fisogni, AI Growth Engineer, AI engineer, automation, full stack developer, React, TypeScript, Microsoft 365, Azure, portfolio, Buenos Aires, Argentina",
   },
 }
 

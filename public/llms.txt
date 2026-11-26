@@ -1,6 +1,6 @@
 # Luca Alejandro Fisogni
 
-> Frontend web developer and interface designer based in Isidro Casanova, Buenos Aires, Argentina. Builds clear, functional digital products with React and TypeScript.
+> AI Growth Engineer and full stack developer based in Isidro Casanova, Buenos Aires, Argentina. Uses AI and automation to help teams work better, end to end: from the problem to the product in use. Builds with React, TypeScript, Microsoft 365 and Azure.
 
 ## Site
 
@@ -12,6 +12,7 @@
 
 ## Focus
 
+- AI and automation applied to products and team workflows
 - Frontend development with React and TypeScript
 - Interface design (UX/UI) and product-minded implementation
 - Dashboards, web apps, API integrations

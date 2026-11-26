@@ -2,7 +2,7 @@ export type Locale = "es" | "en"
 
 export const portrait = {
   src: "/yo.webp",
-  alt: "Luca Alejandro Fisogni, desarrollador frontend — foto de perfil",
+  alt: "Luca Alejandro Fisogni, AI Growth Engineer — foto de perfil",
 }
 
 export const technologies = [

@@ -1,0 +1,66 @@
+<!--
+  Plantilla de EmailJS "Contact Us": el mail que te llega cuando alguien escribe desde el portfolio.
+  Variables que manda la web: {{from_name}}, {{from_email}}, {{message}}.
+  Va pegada en el editor de código de la plantilla en el panel de EmailJS (esta es la copia de respaldo).
+  Tablas y estilos en línea a propósito: es lo que soportan Gmail y Outlook. Misma paleta que el portfolio.
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <title>Nuevo mensaje desde el portfolio</title>
+  </head>
+  <body style="margin:0;padding:0;background-color:#050408;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#050408" style="background-color:#050408;">
+      <tr>
+        <td align="center" style="padding:32px 16px;">
+          <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;">
+            <!-- Encabezado -->
+            <tr>
+              <td style="padding:0 4px 20px;font-family:Inter,'Segoe UI',Arial,sans-serif;">
+                <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#a99bf7;font-weight:600;">Portfolio</div>
+                <div style="font-family:'Instrument Serif',Georgia,'Times New Roman',serif;font-size:34px;line-height:1.1;color:#ffffff;margin-top:6px;">Nuevo mensaje</div>
+              </td>
+            </tr>
+
+            <!-- Tarjeta -->
+            <tr>
+              <td bgcolor="#0e0b16" style="background-color:#0e0b16;border:1px solid #2a2638;border-radius:20px;padding:28px;font-family:Inter,'Segoe UI',Arial,sans-serif;">
+                <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#a6a3b4;font-weight:600;">De</div>
+                <div style="font-family:'Instrument Serif',Georgia,'Times New Roman',serif;font-size:28px;line-height:1.15;color:#ffffff;margin-top:4px;">{{from_name}}</div>
+                <div style="margin-top:6px;font-size:14px;">
+                  <a href="mailto:{{from_email}}" style="color:#a99bf7;text-decoration:none;">{{from_email}}</a>
+                </div>
+
+                <div style="height:1px;line-height:1px;font-size:1px;background-color:#2a2638;margin:22px 0;">&nbsp;</div>
+
+                <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#a6a3b4;font-weight:600;">Mensaje</div>
+                <div style="margin-top:10px;padding:16px 18px;background-color:#171327;border-left:3px solid #a99bf7;border-radius:12px;font-size:16px;line-height:1.65;color:#f1f0f7;white-space:pre-wrap;">{{message}}</div>
+
+                <!-- Botón de responder -->
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:26px;">
+                  <tr>
+                    <td bgcolor="#ffffff" style="background-color:#ffffff;border-radius:999px;">
+                      <a href="mailto:{{from_email}}?subject=Re%3A%20Tu%20mensaje%20en%20mi%20portfolio" style="display:inline-block;padding:12px 26px;font-size:14px;font-weight:600;color:#050408;text-decoration:none;font-family:Inter,'Segoe UI',Arial,sans-serif;">Responder</a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Pie -->
+            <tr>
+              <td align="center" style="padding:20px 4px 0;font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:12px;line-height:1.6;color:#8d8a9c;">
+                Enviado desde
+                <a href="https://www.luca-alejandro-fisogni.dev" style="color:#a99bf7;text-decoration:none;">luca-alejandro-fisogni.dev</a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

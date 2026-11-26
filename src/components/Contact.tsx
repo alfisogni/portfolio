@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
 import { useId, useState, type FormEvent } from "react"
 import { contact } from "../content.ts"
 import { sendContactForm } from "../email.ts"
@@ -50,12 +50,6 @@ export function Contact() {
                 <a href={`mailto:${contact.email}`} className="pressable flex min-h-11 items-center gap-3 text-white/85 hover:text-text">
                   <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
                   {contact.email}
-                </a>
-              </li>
-              <li>
-                <a href={contact.phoneHref} className="pressable flex min-h-11 items-center gap-3 text-white/85 hover:text-text">
-                  <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
-                  {contact.phone}
                 </a>
               </li>
               <li className="flex min-h-11 items-center gap-3 text-white/85">

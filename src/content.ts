@@ -48,8 +48,6 @@ export const projectMedia = [
 
 export const contact = {
   email: "alfisogni@gmail.com",
-  phone: "+54 11 5637 4045",
-  phoneHref: "tel:+541156374045",
   location: "Isidro Casanova, Buenos Aires, Argentina",
   linkedin: "https://www.linkedin.com/in/luca-fisogni-50279a350",
   github: "https://github.com/alfisogni",
@@ -232,7 +230,7 @@ export const copy: Record<Locale, Copy> = {
     },
     contactSection: {
       title: "Contacto",
-      intro: "Si tenés un proyecto en mente, escribime. Respondo por mail o por teléfono.",
+      intro: "Si tenés un proyecto en mente, escribime. Respondo por mail.",
       nameLabel: "Nombre",
       emailLabel: "Email",
       messageLabel: "Mensaje",
@@ -343,7 +341,7 @@ export const copy: Record<Locale, Copy> = {
     },
     contactSection: {
       title: "Contact",
-      intro: "If you have a project in mind, write to me. I reply by email or phone.",
+      intro: "If you have a project in mind, write to me. I reply by email.",
       nameLabel: "Name",
       emailLabel: "Email",
       messageLabel: "Message",
